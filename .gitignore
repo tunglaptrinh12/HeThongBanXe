@@ -1,0 +1,17 @@
+# Thư mục tạm của Visual Studio
+.vs/
+*.user
+*.suo
+
+# Kết quả biên dịch
+bin/
+obj/
+
+# File cấu hình không cần thiết
+*.log
+*.db
+*.tmp
+
+# File hệ điều hành
+.DS_Store
+Thumbs.db
