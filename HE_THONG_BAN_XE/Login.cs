@@ -1,4 +1,5 @@
 using HE_THONG_BAN_XE.Connect;
+using HE_THONG_BAN_XE.FormHeThong;
 
 namespace HE_THONG_BAN_XE
 {
@@ -48,6 +49,12 @@ namespace HE_THONG_BAN_XE
                         "thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+                    this.Hide(); // ẩn form đăng nhập
+                    // mở From Mới
+                    MainForm mainForm = new MainForm();
+                    mainForm.ShowDialog();
+                    // sa khi MainForm đóng thì đóng ứng dụng
+                    this.Close();
                 }
                 else
                 {

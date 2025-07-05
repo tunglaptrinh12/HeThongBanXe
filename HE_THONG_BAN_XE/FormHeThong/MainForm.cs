@@ -16,5 +16,10 @@ namespace HE_THONG_BAN_XE.FormHeThong
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
