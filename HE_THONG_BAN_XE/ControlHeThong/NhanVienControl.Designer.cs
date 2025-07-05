@@ -346,6 +346,7 @@
             Controls.Add(label1);
             Name = "NhanVienControl";
             Size = new Size(1147, 721);
+            Load += NhanVienControl_Load;
             groupBox_thongtin_nhanvien.ResumeLayout(false);
             groupBox_thongtin_nhanvien.PerformLayout();
             groupBox_dieukhien_nhanvien.ResumeLayout(false);

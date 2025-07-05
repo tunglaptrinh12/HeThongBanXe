@@ -107,17 +107,22 @@ namespace HE_THONG_BAN_XE.ControlHeThong
 
         private void button_sua_nhanvien_Click(object sender, EventArgs e)
         {
-            using ( var context = new DBNhanVien())
+            using (var context = new DBNhanVien())
             {
                 string ma = textBox_manv_nhanvien.Text.Trim();
-                var nv = context.nhanViens.FirstOrDefault( n => n.MaNV == ma );
-                if ( nv != null )
+                var nv = context.nhanViens.FirstOrDefault(n => n.MaNV == ma);
+                if (nv != null)
                 {
                     nv.TenNV = textBox_tennv_nhanvien.Text.Trim();
                     nv.GioiTinh = radioButton_nam_nhanvien.Checked ? "Nam" : "Nữ";
                     nv.NamSinh = dateTimePicker_namsinh_nhanvien.Value;
                 }
             }
+        }
+
+        private void NhanVienControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
