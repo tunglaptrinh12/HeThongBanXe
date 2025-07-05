@@ -23,5 +23,9 @@ namespace HE_THONG_BAN_XE.model
         [Required,StringLength(255)]
         public String? GhiChu { get; set; } // Mô tả về chương trình khuyến mãi
 
+        // FK
+        [ForeignKey("MaKH")]
+        public virtual KhachHang ?KhachHang { get; set; } // Mối quan hệ với bảng KhachHang, mỗi khách hàng có thể có nhiều chương trình khuyến mãi đã áp dụng
+
     }
 }

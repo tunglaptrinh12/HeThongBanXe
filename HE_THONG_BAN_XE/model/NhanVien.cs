@@ -22,10 +22,14 @@ namespace HE_THONG_BAN_XE.model
         public String? GioiTinh { get; set; }
         public DateTime? NamSinh { get; set; }
         [Required]
+        [StringLength(10)]
+        [RegularExpression(@"^[0-9]{10}$")]
         public String? SDT { get; set; }
         [Required]
+        [EmailAddress]
         [MaxLength(100)]
         public String? Email { get; set; }
+        [StringLength(50)]
         public String? ChucVu { get; set; }
 
     }
