@@ -27,27 +27,13 @@ namespace HE_THONG_BAN_XE.model
         public DateTime NgayLayHD { get; set; }
 
         public Decimal ThanhTien { get; set; }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
 
-        // Khóa ngoại
+        // Khóa ngoại  
         [ForeignKey("MaKH")]
-        public virtual KhachHang ?KhachHang { get; set; } // Mối quan hệ với bảng KhachHang, mỗi hóa đơn thuộc về một khách hàng
+        public virtual KhachHang? KhachHang { get; set; } // Mối quan hệ với bảng KhachHang, mỗi hóa đơn thuộc về một khách hàng  
 
         [ForeignKey("MaXe")]
-        public virtual Xe ?Xe { get; set; }  // Mối quan hệ với bảng Xe, mỗi hóa đơn liên quan đến một xe cụ thể
->>>>>>> Stashed changes
-
-        // Khóa ngoại
-        [ForeignKey("MaKH")]
-        public virtual KhachHang ?KhachHang { get; set; } // Mối quan hệ với bảng KhachHang, mỗi hóa đơn thuộc về một khách hàng
-
-        [ForeignKey("MaXe")]
-        public virtual Xe ?Xe { get; set; }  // Mối quan hệ với bảng Xe, mỗi hóa đơn liên quan đến một xe cụ thể
-
->>>>>>> Stashed changes
+        public virtual Xe? Xe { get; set; } // Mối quan hệ với bảng Xe, mỗi hóa đơn liên quan đến một xe cụ thể  
     }
 
 }
