@@ -90,6 +90,7 @@
             Name = "MainForm";
             Text = "MainForm";
             panel1.ResumeLayout(false);
+
             ResumeLayout(false);
         }
 
