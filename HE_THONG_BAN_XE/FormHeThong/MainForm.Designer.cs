@@ -28,77 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            label1 = new Label();
-            panel2 = new Panel();
+            panner_chucnang = new Panel();
             Nut_Exit = new Button();
-            panel1.SuspendLayout();
+            label1 = new Label();
+            Menu_Pannel = new Panel();
+            panel2 = new Panel();
+            panner_chucnang.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // panner_chucnang
             // 
-            panel1.BackColor = Color.FromArgb(192, 255, 255);
-            panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(Nut_Exit);
-            panel1.Controls.Add(label1);
-            panel1.ForeColor = Color.Indigo;
-            panel1.Location = new Point(1, 2);
-            panel1.Margin = new Padding(0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1221, 125);
-            panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.BackColor = Color.FromArgb(192, 255, 255);
-            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Indigo;
-            label1.Location = new Point(0, 17);
-            label1.Name = "label1";
-            label1.Size = new Size(329, 34);
-            label1.TabIndex = 1;
-            label1.Text = "HỆ THỐNG QUẢN LÝ BÁN XE";
-            label1.Click += label1_Click;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.BorderStyle = BorderStyle.Fixed3D;
-            panel2.Location = new Point(1, 102);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1221, 585);
-            panel2.TabIndex = 1;
+            panner_chucnang.BackColor = Color.Gray;
+            panner_chucnang.BorderStyle = BorderStyle.Fixed3D;
+            panner_chucnang.Controls.Add(Nut_Exit);
+            panner_chucnang.ForeColor = Color.Indigo;
+            panner_chucnang.Location = new Point(1, 2);
+            panner_chucnang.Margin = new Padding(0);
+            panner_chucnang.Name = "panner_chucnang";
+            panner_chucnang.Size = new Size(179, 802);
+            panner_chucnang.TabIndex = 0;
+            panner_chucnang.Paint += panel1_Paint;
             // 
             // Nut_Exit
             // 
             Nut_Exit.BackColor = Color.Red;
-            Nut_Exit.Location = new Point(1088, 53);
+            Nut_Exit.Location = new Point(9, 747);
             Nut_Exit.Name = "Nut_Exit";
-            Nut_Exit.Size = new Size(126, 39);
+            Nut_Exit.Size = new Size(157, 42);
             Nut_Exit.TabIndex = 2;
             Nut_Exit.Text = "Đăng xuất";
             Nut_Exit.UseVisualStyleBackColor = false;
             Nut_Exit.Click += button1_Click;
             // 
+            // label1
+            // 
+            label1.BackColor = Color.FromArgb(192, 255, 255);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Indigo;
+            label1.Location = new Point(358, 14);
+            label1.Name = "label1";
+            label1.Size = new Size(430, 48);
+            label1.TabIndex = 1;
+            label1.Text = "HỆ THỐNG QUẢN LÝ BÁN XE";
+            label1.Click += label1_Click;
+            // 
+            // Menu_Pannel
+            // 
+            Menu_Pannel.BackColor = Color.White;
+            Menu_Pannel.BorderStyle = BorderStyle.Fixed3D;
+            Menu_Pannel.Location = new Point(183, 83);
+            Menu_Pannel.Name = "Menu_Pannel";
+            Menu_Pannel.Size = new Size(1147, 721);
+            Menu_Pannel.TabIndex = 2;
+            Menu_Pannel.Paint += Menu_Paint;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(192, 255, 255);
+            panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(label1);
+            panel2.Location = new Point(183, 2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1147, 75);
+            panel2.TabIndex = 0;
+            panel2.Paint += panel2_Paint;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1223, 685);
+            ClientSize = new Size(1334, 805);
             Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(Menu_Pannel);
+            Controls.Add(panner_chucnang);
             Name = "MainForm";
             Text = "MainForm";
-            panel1.ResumeLayout(false);
-
+            panner_chucnang.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel panner_chucnang;
         private Label label1;
-        private Panel panel2;
         private Button Nut_Exit;
+        private Panel Menu_Pannel;
+        private Panel panel2;
     }
 }
