@@ -32,14 +32,16 @@
             Nut_Exit = new Button();
             label1 = new Label();
             Menu_Pannel = new Panel();
+            label2 = new Label();
             panel2 = new Panel();
             panner_chucnang.SuspendLayout();
+            Menu_Pannel.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panner_chucnang
             // 
-            panner_chucnang.BackColor = Color.Gray;
+            panner_chucnang.BackColor = Color.DodgerBlue;
             panner_chucnang.BorderStyle = BorderStyle.Fixed3D;
             panner_chucnang.Controls.Add(Nut_Exit);
             panner_chucnang.ForeColor = Color.Indigo;
@@ -63,9 +65,9 @@
             // 
             // label1
             // 
-            label1.BackColor = Color.FromArgb(192, 255, 255);
+            label1.BackColor = Color.Indigo;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Indigo;
+            label1.ForeColor = Color.Lavender;
             label1.Location = new Point(358, 14);
             label1.Name = "label1";
             label1.Size = new Size(430, 48);
@@ -77,15 +79,24 @@
             // 
             Menu_Pannel.BackColor = Color.White;
             Menu_Pannel.BorderStyle = BorderStyle.Fixed3D;
+            Menu_Pannel.Controls.Add(label2);
             Menu_Pannel.Location = new Point(183, 83);
             Menu_Pannel.Name = "Menu_Pannel";
             Menu_Pannel.Size = new Size(1147, 721);
             Menu_Pannel.TabIndex = 2;
             Menu_Pannel.Paint += Menu_Paint;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(350, 298);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 20);
+            label2.TabIndex = 0;
+            // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(192, 255, 255);
+            panel2.BackColor = Color.Indigo;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(label1);
             panel2.Location = new Point(183, 2);
@@ -102,9 +113,15 @@
             Controls.Add(panel2);
             Controls.Add(Menu_Pannel);
             Controls.Add(panner_chucnang);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
+            Load += MainForm_Load_1;
             panner_chucnang.ResumeLayout(false);
+            Menu_Pannel.ResumeLayout(false);
+            Menu_Pannel.PerformLayout();
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -116,5 +133,6 @@
         private Button Nut_Exit;
         private Panel Menu_Pannel;
         private Panel panel2;
+        private Label label2;
     }
 }

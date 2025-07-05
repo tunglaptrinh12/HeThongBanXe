@@ -16,7 +16,7 @@ namespace HE_THONG_BAN_XE.FormHeThong
         public MainForm()
         {
             InitializeComponent();
-            CustomizeDesign();  
+            CustomizeDesign();
         }
         private void CustomizeDesign() // Tùy chỉnh giao diện menu
         {
@@ -25,7 +25,7 @@ namespace HE_THONG_BAN_XE.FormHeThong
                 Name = "NhanVienControl",                    // Tên của điều khiển
                 Dock = DockStyle.Fill,
                 Visible = false
-            };  
+            };
             Menu_Pannel.Controls.Add(nhanVienUC);
 
 
@@ -99,7 +99,10 @@ namespace HE_THONG_BAN_XE.FormHeThong
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            this.Close();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -132,6 +135,11 @@ namespace HE_THONG_BAN_XE.FormHeThong
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load_1(object sender, EventArgs e)
         {
 
         }

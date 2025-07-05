@@ -46,6 +46,7 @@
             label1.Size = new Size(114, 20);
             label1.TabIndex = 0;
             label1.Text = "Tên đăng nhập :";
+            label1.Click += label1_Click;
             // 
             // label2
             // 

@@ -37,6 +37,8 @@
             label7 = new Label();
             label8 = new Label();
             groupBox_thongtin_nhanvien = new GroupBox();
+            textBox_timkiem_nhanvien = new TextBox();
+            label9 = new Label();
             checkBox_thungan_nhanvien = new CheckBox();
             checkBox_nvbanhang_nhanvien = new CheckBox();
             radioButton_nu_nhanvien = new RadioButton();
@@ -94,7 +96,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 10.8F);
-            label4.Location = new Point(59, 128);
+            label4.Location = new Point(59, 125);
             label4.Name = "label4";
             label4.Size = new Size(84, 20);
             label4.TabIndex = 3;
@@ -137,7 +139,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Times New Roman", 10.8F);
-            label8.Location = new Point(69, 315);
+            label8.Location = new Point(69, 306);
             label8.Name = "label8";
             label8.Size = new Size(74, 20);
             label8.TabIndex = 7;
@@ -145,6 +147,8 @@
             // 
             // groupBox_thongtin_nhanvien
             // 
+            groupBox_thongtin_nhanvien.Controls.Add(textBox_timkiem_nhanvien);
+            groupBox_thongtin_nhanvien.Controls.Add(label9);
             groupBox_thongtin_nhanvien.Controls.Add(checkBox_thungan_nhanvien);
             groupBox_thongtin_nhanvien.Controls.Add(checkBox_nvbanhang_nhanvien);
             groupBox_thongtin_nhanvien.Controls.Add(radioButton_nu_nhanvien);
@@ -164,10 +168,27 @@
             groupBox_thongtin_nhanvien.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox_thongtin_nhanvien.Location = new Point(20, 55);
             groupBox_thongtin_nhanvien.Name = "groupBox_thongtin_nhanvien";
-            groupBox_thongtin_nhanvien.Size = new Size(745, 355);
+            groupBox_thongtin_nhanvien.Size = new Size(745, 402);
             groupBox_thongtin_nhanvien.TabIndex = 8;
             groupBox_thongtin_nhanvien.TabStop = false;
             groupBox_thongtin_nhanvien.Text = "Thông Tin Nhân Viên";
+            // 
+            // textBox_timkiem_nhanvien
+            // 
+            textBox_timkiem_nhanvien.Location = new Point(149, 346);
+            textBox_timkiem_nhanvien.Name = "textBox_timkiem_nhanvien";
+            textBox_timkiem_nhanvien.Size = new Size(505, 31);
+            textBox_timkiem_nhanvien.TabIndex = 18;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Times New Roman", 10.8F);
+            label9.Location = new Point(55, 353);
+            label9.Name = "label9";
+            label9.Size = new Size(88, 20);
+            label9.TabIndex = 17;
+            label9.Text = "Tìm Kiếm:";
             // 
             // checkBox_thungan_nhanvien
             // 
@@ -192,7 +213,7 @@
             // radioButton_nu_nhanvien
             // 
             radioButton_nu_nhanvien.AutoSize = true;
-            radioButton_nu_nhanvien.Location = new Point(441, 128);
+            radioButton_nu_nhanvien.Location = new Point(442, 119);
             radioButton_nu_nhanvien.Name = "radioButton_nu_nhanvien";
             radioButton_nu_nhanvien.Size = new Size(58, 29);
             radioButton_nu_nhanvien.TabIndex = 14;
@@ -203,24 +224,25 @@
             // radioButton_nam_nhanvien
             // 
             radioButton_nam_nhanvien.AutoSize = true;
-            radioButton_nam_nhanvien.Location = new Point(260, 128);
+            radioButton_nam_nhanvien.Location = new Point(260, 119);
             radioButton_nam_nhanvien.Name = "radioButton_nam_nhanvien";
             radioButton_nam_nhanvien.Size = new Size(72, 29);
             radioButton_nam_nhanvien.TabIndex = 13;
             radioButton_nam_nhanvien.TabStop = true;
             radioButton_nam_nhanvien.Text = "Nam";
             radioButton_nam_nhanvien.UseVisualStyleBackColor = true;
+            radioButton_nam_nhanvien.CheckedChanged += radioButton_nam_nhanvien_CheckedChanged;
             // 
             // dateTimePicker_namsinh_nhanvien
             // 
-            dateTimePicker_namsinh_nhanvien.Location = new Point(149, 173);
+            dateTimePicker_namsinh_nhanvien.Location = new Point(149, 166);
             dateTimePicker_namsinh_nhanvien.Name = "dateTimePicker_namsinh_nhanvien";
             dateTimePicker_namsinh_nhanvien.Size = new Size(505, 31);
             dateTimePicker_namsinh_nhanvien.TabIndex = 12;
             // 
             // textBox_sdt_nhanvien
             // 
-            textBox_sdt_nhanvien.Location = new Point(149, 221);
+            textBox_sdt_nhanvien.Location = new Point(149, 214);
             textBox_sdt_nhanvien.Name = "textBox_sdt_nhanvien";
             textBox_sdt_nhanvien.Size = new Size(505, 31);
             textBox_sdt_nhanvien.TabIndex = 11;
@@ -256,7 +278,7 @@
             groupBox_dieukhien_nhanvien.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox_dieukhien_nhanvien.Location = new Point(781, 55);
             groupBox_dieukhien_nhanvien.Name = "groupBox_dieukhien_nhanvien";
-            groupBox_dieukhien_nhanvien.Size = new Size(350, 355);
+            groupBox_dieukhien_nhanvien.Size = new Size(350, 402);
             groupBox_dieukhien_nhanvien.TabIndex = 9;
             groupBox_dieukhien_nhanvien.TabStop = false;
             groupBox_dieukhien_nhanvien.Text = "Điều Khiển";
@@ -266,7 +288,7 @@
             button_tatca_nhanvien.BackColor = Color.Tan;
             button_tatca_nhanvien.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button_tatca_nhanvien.ForeColor = SystemColors.InactiveCaptionText;
-            button_tatca_nhanvien.Location = new Point(29, 295);
+            button_tatca_nhanvien.Location = new Point(29, 253);
             button_tatca_nhanvien.Name = "button_tatca_nhanvien";
             button_tatca_nhanvien.Size = new Size(291, 49);
             button_tatca_nhanvien.TabIndex = 4;
@@ -279,19 +301,20 @@
             button_timkiem_nhanvien.BackColor = Color.Tan;
             button_timkiem_nhanvien.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button_timkiem_nhanvien.ForeColor = SystemColors.InactiveCaptionText;
-            button_timkiem_nhanvien.Location = new Point(29, 231);
+            button_timkiem_nhanvien.Location = new Point(29, 328);
             button_timkiem_nhanvien.Name = "button_timkiem_nhanvien";
             button_timkiem_nhanvien.Size = new Size(291, 49);
             button_timkiem_nhanvien.TabIndex = 3;
-            button_timkiem_nhanvien.Text = "TÌm Kiếm";
+            button_timkiem_nhanvien.Text = "Tìm Kiếm";
             button_timkiem_nhanvien.UseVisualStyleBackColor = false;
+            button_timkiem_nhanvien.Click += button_timkiem_nhanvien_Click;
             // 
             // button_sua_nhanvien
             // 
             button_sua_nhanvien.BackColor = Color.Tan;
             button_sua_nhanvien.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button_sua_nhanvien.ForeColor = SystemColors.InactiveCaptionText;
-            button_sua_nhanvien.Location = new Point(29, 166);
+            button_sua_nhanvien.Location = new Point(29, 173);
             button_sua_nhanvien.Name = "button_sua_nhanvien";
             button_sua_nhanvien.Size = new Size(291, 49);
             button_sua_nhanvien.TabIndex = 2;
@@ -327,11 +350,13 @@
             // 
             // dataGridView_nhanvien
             // 
+            dataGridView_nhanvien.BackgroundColor = SystemColors.ControlLight;
             dataGridView_nhanvien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_nhanvien.Location = new Point(20, 416);
+            dataGridView_nhanvien.Location = new Point(20, 463);
             dataGridView_nhanvien.Name = "dataGridView_nhanvien";
+            dataGridView_nhanvien.ReadOnly = true;
             dataGridView_nhanvien.RowHeadersWidth = 51;
-            dataGridView_nhanvien.Size = new Size(1111, 292);
+            dataGridView_nhanvien.Size = new Size(1111, 245);
             dataGridView_nhanvien.TabIndex = 10;
             dataGridView_nhanvien.CellContentClick += dataGridView_nhanvien_CellContentClick;
             // 
@@ -382,5 +407,7 @@
         private Button button_them_nhanvien;
         private DataGridView dataGridView_nhanvien;
         private Button button_tatca_nhanvien;
+        private TextBox textBox_timkiem_nhanvien;
+        private Label label9;
     }
 }
