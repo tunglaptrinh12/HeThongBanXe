@@ -35,8 +35,5 @@ namespace HE_THONG_BAN_XE.model
         public Decimal GiaBan { get; set; }
         [Required, StringLength(20)]
         public String? TrangThai { get; set; } // Mới, Đã bán, Đang bảo trì, Hết hàng
-
-        //h
-
     }
 }

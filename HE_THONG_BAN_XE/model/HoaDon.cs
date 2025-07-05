@@ -27,8 +27,6 @@ namespace HE_THONG_BAN_XE.model
         public DateTime NgayLayHD { get; set; }
 
         public Decimal ThanhTien { get; set; }
-        //m
-
     }
 
 }
