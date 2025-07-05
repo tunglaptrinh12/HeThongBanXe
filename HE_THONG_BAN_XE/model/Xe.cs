@@ -36,6 +36,5 @@ namespace HE_THONG_BAN_XE.model
         [Required, StringLength(20)]
         public String? TrangThai { get; set; } // Mới, Đã bán, Đang bảo trì, Hết hàng
         public virtual ICollection<HoaDon> HoaDons { get; set; } // Mối quan hệ với bảng HoaDon, mỗi xe có thể có nhiều hóa đơn liên quan
-        public virtual ICollection<HoaDon> ?HoaDons { get; set; } // Mối quan hệ với bảng HoaDon, mỗi xe có thể có nhiều hóa đơn liên quan
     }
 }

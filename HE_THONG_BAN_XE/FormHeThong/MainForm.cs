@@ -16,5 +16,15 @@ namespace HE_THONG_BAN_XE.FormHeThong
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
