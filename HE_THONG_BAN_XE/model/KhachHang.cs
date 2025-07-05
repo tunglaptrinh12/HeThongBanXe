@@ -21,10 +21,16 @@ namespace HE_THONG_BAN_XE.model
         [MaxLength(10)]
         public String? GioiTinh { get; set ; }
         public DateTime? NgaySinh { get; set ; }
+        [StringLength(10)]
+        [RegularExpression(@"^[0-9]{10}$")]
         public string? SDT { get; set ; }
-        [MaxLength(100)]
+        [StringLength(100)]
+        [EmailAddress]
         public String? Email { get; set ; }
         [MaxLength(255)]
         public String? DiaChi { get; set ; }
+        // Quan hệ
+        public virtual ICollection<HoaDon> ?HoaDons { get; set; } // Mối quan hệ với bảng HoaDon, mỗi khách hàng có thể có nhiều hóa đơn liên quan
+        public virtual ICollection<KhachHangDaKhuyenMai> ?DanhSachKhuyenMai { get; set; } // Mối quan hệ với bảng KhachHangDaKhuyenMai, mỗi khách hàng có thể có nhiều chương trình khuyến mãi đã áp dụng
     }
 }
