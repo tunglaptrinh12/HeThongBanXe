@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HE_THONG_BAN_XE.ControlHeThong;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,10 @@ namespace HE_THONG_BAN_XE.FormHeThong
             Panel panelXe = CreateMenuPanel("🚗", "Quản Lý Xe", Color.FromArgb(52, 152, 219), "FormXe"); // Tạo panel cho Quản Lý Xe
             panelXe.Location = new Point(0, 50); // Đặt vị trí panel
             panner_chucnang.Controls.Add(panelXe); // Thêm panel vào panner_chucnang
+            NhanVienControl nv = new NhanVienControl();
+            nv.Dock = DockStyle.Fill;
+            Menu_Pannel.Controls.Clear();
+            Menu_Pannel.Controls.Add(nv);
         }
         private Panel CreateMenuPanel(string iconText, string labelText, Color bgColor, string tagName) // Tạo panel menu với biểu tượng, nhãn, màu nền và tên thẻ
         {
