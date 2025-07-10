@@ -32,11 +32,11 @@
             groupBox1 = new GroupBox();
             dataGridView_nhanvien = new DataGridView();
             groupBox2 = new GroupBox();
-            button_them_nhanvien = new Button();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            button_them_nhanvien = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView_nhanvien).BeginInit();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -65,7 +65,7 @@
             // 
             // dataGridView_nhanvien
             // 
-            dataGridView_nhanvien.BackgroundColor = SystemColors.ControlLight;
+            dataGridView_nhanvien.BackgroundColor = Color.FloralWhite;
             dataGridView_nhanvien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_nhanvien.Location = new Point(17, 464);
             dataGridView_nhanvien.Name = "dataGridView_nhanvien";
@@ -89,41 +89,17 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Điều khiển";
             // 
-            // button_them_nhanvien
+            // button4
             // 
-            button_them_nhanvien.BackColor = Color.Tan;
-            button_them_nhanvien.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button_them_nhanvien.ForeColor = SystemColors.InactiveCaptionText;
-            button_them_nhanvien.Location = new Point(18, 30);
-            button_them_nhanvien.Name = "button_them_nhanvien";
-            button_them_nhanvien.Size = new Size(338, 49);
-            button_them_nhanvien.TabIndex = 1;
-            button_them_nhanvien.Text = "Thêm";
-            button_them_nhanvien.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Tan;
-            button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.InactiveCaptionText;
-            button1.Location = new Point(18, 106);
-            button1.Name = "button1";
-            button1.Size = new Size(338, 49);
-            button1.TabIndex = 2;
-            button1.Text = "Sửa";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Tan;
-            button2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.InactiveCaptionText;
-            button2.Location = new Point(18, 182);
-            button2.Name = "button2";
-            button2.Size = new Size(338, 49);
-            button2.TabIndex = 3;
-            button2.Text = "Xóa";
-            button2.UseVisualStyleBackColor = false;
+            button4.BackColor = Color.Tan;
+            button4.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.ForeColor = SystemColors.InactiveCaptionText;
+            button4.Location = new Point(18, 320);
+            button4.Name = "button4";
+            button4.Size = new Size(338, 49);
+            button4.TabIndex = 5;
+            button4.Text = "Tìm Kiếm";
+            button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -137,17 +113,41 @@
             button3.Text = "Tất cả";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // button2
             // 
-            button4.BackColor = Color.Tan;
-            button4.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = SystemColors.InactiveCaptionText;
-            button4.Location = new Point(18, 320);
-            button4.Name = "button4";
-            button4.Size = new Size(338, 49);
-            button4.TabIndex = 5;
-            button4.Text = "Tìm Kiếm";
-            button4.UseVisualStyleBackColor = false;
+            button2.BackColor = Color.Tan;
+            button2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.InactiveCaptionText;
+            button2.Location = new Point(18, 182);
+            button2.Name = "button2";
+            button2.Size = new Size(338, 49);
+            button2.TabIndex = 3;
+            button2.Text = "Xóa";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Tan;
+            button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.InactiveCaptionText;
+            button1.Location = new Point(18, 106);
+            button1.Name = "button1";
+            button1.Size = new Size(338, 49);
+            button1.TabIndex = 2;
+            button1.Text = "Sửa";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button_them_nhanvien
+            // 
+            button_them_nhanvien.BackColor = Color.Tan;
+            button_them_nhanvien.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_them_nhanvien.ForeColor = SystemColors.InactiveCaptionText;
+            button_them_nhanvien.Location = new Point(18, 30);
+            button_them_nhanvien.Name = "button_them_nhanvien";
+            button_them_nhanvien.Size = new Size(338, 49);
+            button_them_nhanvien.TabIndex = 1;
+            button_them_nhanvien.Text = "Thêm";
+            button_them_nhanvien.UseVisualStyleBackColor = false;
             // 
             // KhachHangKhuyenMaiControl
             // 

@@ -21,5 +21,10 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         {
 
         }
+
+        private void checkBox_trusk_xe_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -44,6 +44,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                 var list = Context.nhanViens.ToList();
                 dataGridView_nhanvien.DataSource = list;
                 FormatDataGridView();
+                
             }
         }
         private void FormatDataGridView()
@@ -60,6 +61,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
 
             dataGridView_nhanvien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+        
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -233,7 +235,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
 
         private void NhanVienControl_Load(object sender, EventArgs e)
         {
-            FormatDataGridView();
+            LoadNhanVien();
         }
 
         private void button_timkiem_nhanvien_Click(object sender, EventArgs e)

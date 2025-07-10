@@ -62,10 +62,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.DarkBlue;
             label1.Location = new Point(13, 13);
             label1.Name = "label1";
-            label1.Size = new Size(228, 31);
+            label1.Size = new Size(235, 25);
             label1.TabIndex = 0;
             label1.Text = "Quản Lý Khách Hàng";
             label1.Click += label1_Click;
@@ -90,7 +91,8 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = Color.DarkBlue;
             groupBox1.Location = new Point(13, 52);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(692, 328);
@@ -103,7 +105,7 @@
             radioButton_nu_khachhang.AutoSize = true;
             radioButton_nu_khachhang.Location = new Point(412, 111);
             radioButton_nu_khachhang.Name = "radioButton_nu_khachhang";
-            radioButton_nu_khachhang.Size = new Size(58, 29);
+            radioButton_nu_khachhang.Size = new Size(54, 24);
             radioButton_nu_khachhang.TabIndex = 16;
             radioButton_nu_khachhang.TabStop = true;
             radioButton_nu_khachhang.Text = "Nữ";
@@ -114,7 +116,7 @@
             radioButton_nam_khachhang.AutoSize = true;
             radioButton_nam_khachhang.Location = new Point(257, 111);
             radioButton_nam_khachhang.Name = "radioButton_nam_khachhang";
-            radioButton_nam_khachhang.Size = new Size(72, 29);
+            radioButton_nam_khachhang.Size = new Size(67, 24);
             radioButton_nam_khachhang.TabIndex = 15;
             radioButton_nam_khachhang.TabStop = true;
             radioButton_nam_khachhang.Text = "Nam";
@@ -124,58 +126,58 @@
             // 
             dateTimePicker_ngaysinh_khachhang.Location = new Point(173, 140);
             dateTimePicker_ngaysinh_khachhang.Name = "dateTimePicker_ngaysinh_khachhang";
-            dateTimePicker_ngaysinh_khachhang.Size = new Size(498, 31);
+            dateTimePicker_ngaysinh_khachhang.Size = new Size(498, 28);
             dateTimePicker_ngaysinh_khachhang.TabIndex = 14;
             // 
             // textBox_timkiem_khachhang
             // 
             textBox_timkiem_khachhang.Location = new Point(173, 287);
             textBox_timkiem_khachhang.Name = "textBox_timkiem_khachhang";
-            textBox_timkiem_khachhang.Size = new Size(498, 31);
+            textBox_timkiem_khachhang.Size = new Size(498, 28);
             textBox_timkiem_khachhang.TabIndex = 13;
             // 
             // textBox_diachi_khachhang
             // 
             textBox_diachi_khachhang.Location = new Point(173, 251);
             textBox_diachi_khachhang.Name = "textBox_diachi_khachhang";
-            textBox_diachi_khachhang.Size = new Size(498, 31);
+            textBox_diachi_khachhang.Size = new Size(498, 28);
             textBox_diachi_khachhang.TabIndex = 12;
             // 
             // textBox_email_khachhang
             // 
             textBox_email_khachhang.Location = new Point(173, 215);
             textBox_email_khachhang.Name = "textBox_email_khachhang";
-            textBox_email_khachhang.Size = new Size(498, 31);
+            textBox_email_khachhang.Size = new Size(498, 28);
             textBox_email_khachhang.TabIndex = 11;
             // 
             // textBox_sdt_khachhang
             // 
             textBox_sdt_khachhang.Location = new Point(173, 179);
             textBox_sdt_khachhang.Name = "textBox_sdt_khachhang";
-            textBox_sdt_khachhang.Size = new Size(498, 31);
+            textBox_sdt_khachhang.Size = new Size(498, 28);
             textBox_sdt_khachhang.TabIndex = 10;
             // 
             // textBox_tenKH_khachhang
             // 
             textBox_tenKH_khachhang.Location = new Point(173, 71);
             textBox_tenKH_khachhang.Name = "textBox_tenKH_khachhang";
-            textBox_tenKH_khachhang.Size = new Size(498, 31);
+            textBox_tenKH_khachhang.Size = new Size(498, 28);
             textBox_tenKH_khachhang.TabIndex = 9;
             // 
             // textBox_maKh_khachhang
             // 
             textBox_maKh_khachhang.Location = new Point(173, 35);
             textBox_maKh_khachhang.Name = "textBox_maKh_khachhang";
-            textBox_maKh_khachhang.Size = new Size(498, 31);
+            textBox_maKh_khachhang.Size = new Size(498, 28);
             textBox_maKh_khachhang.TabIndex = 8;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            label9.Location = new Point(79, 291);
+            label9.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold);
+            label9.Location = new Point(86, 291);
             label9.Name = "label9";
-            label9.Size = new Size(94, 25);
+            label9.Size = new Size(92, 20);
             label9.TabIndex = 7;
             label9.Text = "Tìm Kiếm:";
             label9.Click += label9_Click;
@@ -183,70 +185,70 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            label8.Location = new Point(99, 255);
+            label8.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold);
+            label8.Location = new Point(104, 255);
             label8.Name = "label8";
-            label8.Size = new Size(74, 25);
+            label8.Size = new Size(74, 20);
             label8.TabIndex = 6;
             label8.Text = "Địa Chỉ:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            label7.Location = new Point(113, 219);
+            label7.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold);
+            label7.Location = new Point(119, 219);
             label7.Name = "label7";
-            label7.Size = new Size(60, 25);
+            label7.Size = new Size(59, 20);
             label7.TabIndex = 5;
             label7.Text = "Email:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            label6.Location = new Point(49, 183);
+            label6.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold);
+            label6.Location = new Point(53, 183);
             label6.Name = "label6";
-            label6.Size = new Size(131, 25);
+            label6.Size = new Size(125, 20);
             label6.TabIndex = 4;
             label6.Text = "Số Điện Thoại:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            label5.Location = new Point(79, 147);
+            label5.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold);
+            label5.Location = new Point(84, 147);
             label5.Name = "label5";
-            label5.Size = new Size(100, 25);
+            label5.Size = new Size(94, 20);
             label5.TabIndex = 3;
             label5.Text = "Ngày Sinh:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            label4.Location = new Point(83, 111);
+            label4.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold);
+            label4.Location = new Point(89, 111);
             label4.Name = "label4";
-            label4.Size = new Size(91, 25);
+            label4.Size = new Size(89, 20);
             label4.TabIndex = 2;
             label4.Text = "Giới Tính:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            label3.Location = new Point(30, 75);
+            label3.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold);
+            label3.Location = new Point(32, 75);
             label3.Name = "label3";
-            label3.Size = new Size(147, 25);
+            label3.Size = new Size(146, 20);
             label3.TabIndex = 1;
             label3.Text = "Tên Khách Hàng:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            label2.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold);
             label2.Location = new Point(35, 39);
             label2.Name = "label2";
-            label2.Size = new Size(144, 25);
+            label2.Size = new Size(143, 20);
             label2.TabIndex = 0;
             label2.Text = "Mã Khách Hàng:";
             label2.Click += label2_Click;
@@ -258,7 +260,8 @@
             groupBox2.Controls.Add(button_xoa_khachhang);
             groupBox2.Controls.Add(button_sua_khachhang);
             groupBox2.Controls.Add(button_them_khachhang);
-            groupBox2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.ForeColor = Color.DarkBlue;
             groupBox2.Location = new Point(751, 52);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(381, 328);
@@ -269,6 +272,7 @@
             // button_tatca_khachhang
             // 
             button_tatca_khachhang.BackColor = Color.Tan;
+            button_tatca_khachhang.ForeColor = SystemColors.InactiveCaptionText;
             button_tatca_khachhang.Location = new Point(46, 50);
             button_tatca_khachhang.Name = "button_tatca_khachhang";
             button_tatca_khachhang.Size = new Size(294, 39);
@@ -280,6 +284,7 @@
             // button_timkiem_khachhang
             // 
             button_timkiem_khachhang.BackColor = Color.Tan;
+            button_timkiem_khachhang.ForeColor = SystemColors.InactiveCaptionText;
             button_timkiem_khachhang.Location = new Point(46, 278);
             button_timkiem_khachhang.Name = "button_timkiem_khachhang";
             button_timkiem_khachhang.Size = new Size(294, 39);
@@ -291,6 +296,7 @@
             // button_xoa_khachhang
             // 
             button_xoa_khachhang.BackColor = Color.Tan;
+            button_xoa_khachhang.ForeColor = SystemColors.InactiveCaptionText;
             button_xoa_khachhang.Location = new Point(46, 221);
             button_xoa_khachhang.Name = "button_xoa_khachhang";
             button_xoa_khachhang.Size = new Size(294, 39);
@@ -302,6 +308,7 @@
             // button_sua_khachhang
             // 
             button_sua_khachhang.BackColor = Color.Tan;
+            button_sua_khachhang.ForeColor = SystemColors.InactiveCaptionText;
             button_sua_khachhang.Location = new Point(46, 164);
             button_sua_khachhang.Name = "button_sua_khachhang";
             button_sua_khachhang.Size = new Size(294, 39);
@@ -313,6 +320,7 @@
             // button_them_khachhang
             // 
             button_them_khachhang.BackColor = Color.Tan;
+            button_them_khachhang.ForeColor = SystemColors.InactiveCaptionText;
             button_them_khachhang.Location = new Point(46, 107);
             button_them_khachhang.Name = "button_them_khachhang";
             button_them_khachhang.Size = new Size(294, 39);
@@ -323,6 +331,7 @@
             // 
             // dataGridView_khachhang
             // 
+            dataGridView_khachhang.BackgroundColor = Color.FloralWhite;
             dataGridView_khachhang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_khachhang.Location = new Point(13, 386);
             dataGridView_khachhang.Name = "dataGridView_khachhang";
