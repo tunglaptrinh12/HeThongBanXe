@@ -21,8 +21,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         {
 
         }
-
-        private void checkBox_trusk_xe_CheckedChanged(object sender, EventArgs e)
+        private void button_them_xe_Click(object sender, EventArgs e)
         {
 
         }

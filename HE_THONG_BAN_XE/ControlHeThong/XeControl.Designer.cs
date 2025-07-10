@@ -489,7 +489,8 @@
             button_them_xe.Size = new Size(163, 84);
             button_them_xe.TabIndex = 0;
             button_them_xe.Text = "Thêm Xe";
-            button_them_xe.UseVisualStyleBackColor = false;
+            button_them_xe.UseVisualStyleBackColor = true;
+            button_them_xe.Click += button_them_xe_Click;
             // 
             // XeControl
             // 
