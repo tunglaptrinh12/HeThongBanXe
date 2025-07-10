@@ -30,13 +30,26 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            DateTimeNgayAD = new DateTimePicker();
+            txtMaKM = new TextBox();
+            txtMaKH = new TextBox();
+            txtMaHoaDon = new TextBox();
+            txtGhiChu = new TextBox();
+            txtGTKM = new TextBox();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
             dataGridView_nhanvien = new DataGridView();
             groupBox2 = new GroupBox();
-            button_them_nhanvien = new Button();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            NutTimKiem = new Button();
+            NutShowAll = new Button();
+            NutXoa = new Button();
+            NutSua = new Button();
+            NutThem = new Button();
+            groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_nhanvien).BeginInit();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -45,43 +58,159 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.SkyBlue;
-            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Indigo;
             label1.Location = new Point(28, 20);
             label1.Name = "label1";
-            label1.Size = new Size(225, 31);
+            label1.Size = new Size(281, 32);
             label1.TabIndex = 1;
             label1.Text = "Quản Lý Khuyến Mãi";
             // 
             // groupBox1
             // 
-            groupBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.Controls.Add(DateTimeNgayAD);
+            groupBox1.Controls.Add(txtMaKM);
+            groupBox1.Controls.Add(txtMaKH);
+            groupBox1.Controls.Add(txtMaHoaDon);
+            groupBox1.Controls.Add(txtGhiChu);
+            groupBox1.Controls.Add(txtGTKM);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             groupBox1.Location = new Point(28, 69);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(699, 375);
+            groupBox1.Size = new Size(719, 375);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin khuyến mãi";
+            // 
+            // DateTimeNgayAD
+            // 
+            DateTimeNgayAD.Location = new Point(229, 208);
+            DateTimeNgayAD.Name = "DateTimeNgayAD";
+            DateTimeNgayAD.Size = new Size(473, 34);
+            DateTimeNgayAD.TabIndex = 11;
+            // 
+            // txtMaKM
+            // 
+            txtMaKM.Location = new Point(229, 34);
+            txtMaKM.Name = "txtMaKM";
+            txtMaKM.Size = new Size(473, 34);
+            txtMaKM.TabIndex = 10;
+            // 
+            // txtMaKH
+            // 
+            txtMaKH.Location = new Point(229, 92);
+            txtMaKH.Name = "txtMaKH";
+            txtMaKH.Size = new Size(473, 34);
+            txtMaKH.TabIndex = 9;
+            // 
+            // txtMaHoaDon
+            // 
+            txtMaHoaDon.Location = new Point(229, 150);
+            txtMaHoaDon.Name = "txtMaHoaDon";
+            txtMaHoaDon.Size = new Size(473, 34);
+            txtMaHoaDon.TabIndex = 8;
+            // 
+            // txtGhiChu
+            // 
+            txtGhiChu.Location = new Point(229, 324);
+            txtGhiChu.Name = "txtGhiChu";
+            txtGhiChu.Size = new Size(473, 34);
+            txtGhiChu.TabIndex = 7;
+            // 
+            // txtGTKM
+            // 
+            txtGTKM.Location = new Point(229, 261);
+            txtGTKM.Name = "txtGTKM";
+            txtGTKM.Size = new Size(473, 34);
+            txtGTKM.TabIndex = 6;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(125, 332);
+            label5.Name = "label5";
+            label5.Size = new Size(98, 26);
+            label5.TabIndex = 5;
+            label5.Text = "Ghi chú :\r\n";
+            label5.Click += label5_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(25, 269);
+            label6.Name = "label6";
+            label6.Size = new Size(198, 26);
+            label6.TabIndex = 4;
+            label6.Text = "Giá trị khuyến mãi :";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(69, 215);
+            label7.Name = "label7";
+            label7.Size = new Size(154, 26);
+            label7.TabIndex = 3;
+            label7.Text = "Ngày áp dụng :";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(88, 158);
+            label4.Name = "label4";
+            label4.Size = new Size(135, 26);
+            label4.TabIndex = 2;
+            label4.Text = "Mã hóa đơn :";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(54, 100);
+            label3.Name = "label3";
+            label3.Size = new Size(172, 26);
+            label3.TabIndex = 1;
+            label3.Text = "Mã khách hàng : ";
+            label3.Click += label3_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(54, 42);
+            label2.Name = "label2";
+            label2.Size = new Size(169, 26);
+            label2.TabIndex = 0;
+            label2.Text = "Mã khuyến mãi :";
             // 
             // dataGridView_nhanvien
             // 
             dataGridView_nhanvien.BackgroundColor = SystemColors.ControlLight;
             dataGridView_nhanvien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_nhanvien.Location = new Point(17, 464);
+            dataGridView_nhanvien.Location = new Point(17, 450);
             dataGridView_nhanvien.Name = "dataGridView_nhanvien";
             dataGridView_nhanvien.ReadOnly = true;
             dataGridView_nhanvien.RowHeadersWidth = 51;
-            dataGridView_nhanvien.Size = new Size(1111, 245);
+            dataGridView_nhanvien.Size = new Size(1111, 259);
             dataGridView_nhanvien.TabIndex = 11;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(button4);
-            groupBox2.Controls.Add(button3);
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(button1);
-            groupBox2.Controls.Add(button_them_nhanvien);
-            groupBox2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.Controls.Add(NutTimKiem);
+            groupBox2.Controls.Add(NutShowAll);
+            groupBox2.Controls.Add(NutXoa);
+            groupBox2.Controls.Add(NutSua);
+            groupBox2.Controls.Add(NutThem);
+            groupBox2.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             groupBox2.Location = new Point(753, 69);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(375, 375);
@@ -89,65 +218,65 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Điều khiển";
             // 
-            // button_them_nhanvien
+            // NutTimKiem
             // 
-            button_them_nhanvien.BackColor = Color.Tan;
-            button_them_nhanvien.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button_them_nhanvien.ForeColor = SystemColors.InactiveCaptionText;
-            button_them_nhanvien.Location = new Point(18, 30);
-            button_them_nhanvien.Name = "button_them_nhanvien";
-            button_them_nhanvien.Size = new Size(338, 49);
-            button_them_nhanvien.TabIndex = 1;
-            button_them_nhanvien.Text = "Thêm";
-            button_them_nhanvien.UseVisualStyleBackColor = false;
+            NutTimKiem.BackColor = Color.Tan;
+            NutTimKiem.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            NutTimKiem.ForeColor = SystemColors.InactiveCaptionText;
+            NutTimKiem.Location = new Point(18, 320);
+            NutTimKiem.Name = "NutTimKiem";
+            NutTimKiem.Size = new Size(338, 49);
+            NutTimKiem.TabIndex = 5;
+            NutTimKiem.Text = "Tìm Kiếm";
+            NutTimKiem.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // NutShowAll
             // 
-            button1.BackColor = Color.Tan;
-            button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.InactiveCaptionText;
-            button1.Location = new Point(18, 106);
-            button1.Name = "button1";
-            button1.Size = new Size(338, 49);
-            button1.TabIndex = 2;
-            button1.Text = "Sửa";
-            button1.UseVisualStyleBackColor = false;
+            NutShowAll.BackColor = Color.Tan;
+            NutShowAll.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            NutShowAll.ForeColor = SystemColors.InactiveCaptionText;
+            NutShowAll.Location = new Point(18, 252);
+            NutShowAll.Name = "NutShowAll";
+            NutShowAll.Size = new Size(338, 49);
+            NutShowAll.TabIndex = 4;
+            NutShowAll.Text = "Tất cả";
+            NutShowAll.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // NutXoa
             // 
-            button2.BackColor = Color.Tan;
-            button2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.InactiveCaptionText;
-            button2.Location = new Point(18, 182);
-            button2.Name = "button2";
-            button2.Size = new Size(338, 49);
-            button2.TabIndex = 3;
-            button2.Text = "Xóa";
-            button2.UseVisualStyleBackColor = false;
+            NutXoa.BackColor = Color.Tan;
+            NutXoa.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            NutXoa.ForeColor = SystemColors.InactiveCaptionText;
+            NutXoa.Location = new Point(18, 182);
+            NutXoa.Name = "NutXoa";
+            NutXoa.Size = new Size(338, 49);
+            NutXoa.TabIndex = 3;
+            NutXoa.Text = "Xóa";
+            NutXoa.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // NutSua
             // 
-            button3.BackColor = Color.Tan;
-            button3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = SystemColors.InactiveCaptionText;
-            button3.Location = new Point(18, 252);
-            button3.Name = "button3";
-            button3.Size = new Size(338, 49);
-            button3.TabIndex = 4;
-            button3.Text = "Tất cả";
-            button3.UseVisualStyleBackColor = false;
+            NutSua.BackColor = Color.Tan;
+            NutSua.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            NutSua.ForeColor = SystemColors.InactiveCaptionText;
+            NutSua.Location = new Point(18, 106);
+            NutSua.Name = "NutSua";
+            NutSua.Size = new Size(338, 49);
+            NutSua.TabIndex = 2;
+            NutSua.Text = "Sửa";
+            NutSua.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // NutThem
             // 
-            button4.BackColor = Color.Tan;
-            button4.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = SystemColors.InactiveCaptionText;
-            button4.Location = new Point(18, 320);
-            button4.Name = "button4";
-            button4.Size = new Size(338, 49);
-            button4.TabIndex = 5;
-            button4.Text = "Tìm Kiếm";
-            button4.UseVisualStyleBackColor = false;
+            NutThem.BackColor = Color.Tan;
+            NutThem.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            NutThem.ForeColor = SystemColors.InactiveCaptionText;
+            NutThem.Location = new Point(18, 30);
+            NutThem.Name = "NutThem";
+            NutThem.Size = new Size(338, 49);
+            NutThem.TabIndex = 1;
+            NutThem.Text = "Thêm";
+            NutThem.UseVisualStyleBackColor = false;
             // 
             // KhachHangKhuyenMaiControl
             // 
@@ -160,6 +289,8 @@
             Controls.Add(label1);
             Name = "KhachHangKhuyenMaiControl";
             Size = new Size(1147, 721);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_nhanvien).EndInit();
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
@@ -172,10 +303,22 @@
         private GroupBox groupBox1;
         private DataGridView dataGridView_nhanvien;
         private GroupBox groupBox2;
-        private Button button_them_nhanvien;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private Button button4;
+        private Button NutThem;
+        private Button NutShowAll;
+        private Button NutXoa;
+        private Button NutSua;
+        private Button NutTimKiem;
+        private Label label2;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label4;
+        private Label label3;
+        private DateTimePicker DateTimeNgayAD;
+        private TextBox txtMaKM;
+        private TextBox txtMaKH;
+        private TextBox txtMaHoaDon;
+        private TextBox txtGhiChu;
+        private TextBox txtGTKM;
     }
 }

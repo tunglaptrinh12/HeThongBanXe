@@ -30,7 +30,7 @@ namespace HE_THONG_BAN_XE.FormHeThong
 
 
             Panel panelNV = CreateMenuPanel("👥", "Nhân Viên", Color.LightSkyBlue, "NhanVienControl");
-            panelNV.Location = new Point(0, 80 ); // đặt bên dưới nút Xe chẳng hạn
+            panelNV.Location = new Point(0,0 ); // đặt bên dưới nút Xe chẳng hạn
             panner_chucnang.Controls.Add(panelNV); // hoặc panner_chucnang nếu mày dùng tên khác
 
             //Nut Xe
@@ -41,8 +41,8 @@ namespace HE_THONG_BAN_XE.FormHeThong
                 Visible = false                              // Ban đầu ẩn điều khiển này
             };
             Menu_Pannel.Controls.Add(xeControl); // Thêm điều khiển XeControl vào panel Menu_Pannel
-            Panel panelXe = CreateMenuPanel("🚗", "Xe", Color.LightSkyBlue, "XeControl");
-            panelXe.Location = new Point(0,130); // Đặt vị trí panel Xe bên dưới panel Nhân Viên
+            Panel panelXe = CreateMenuPanel("🏢", "Kho hàng ", Color.LightSkyBlue, "XeControl");
+            panelXe.Location = new Point(0,50); // Đặt vị trí panel Xe bên dưới panel Nhân Viên
             panner_chucnang.Controls.Add(panelXe); // Thêm panel Xe vào panner_chucnang
             //Nut Khach Hang 
             KhachHangControl khachHangControl = new KhachHangControl // Tạo một điều khiển KhachHangControl
@@ -53,7 +53,7 @@ namespace HE_THONG_BAN_XE.FormHeThong
             };
             Menu_Pannel.Controls.Add(khachHangControl); // Thêm điều khiển KhachHangControl vào panel Menu_Pannel
             Panel panelKhachHang = CreateMenuPanel("👤", "Khách Hàng", Color.LightSkyBlue, "KhachHangControl");
-            panelKhachHang.Location = new Point(0, 180); // Đặt vị trí panel Khách Hàng bên dưới panel Xe
+            panelKhachHang.Location = new Point(0, 100); // Đặt vị trí panel Khách Hàng bên dưới panel Xe
             panner_chucnang.Controls.Add(panelKhachHang); // Thêm panel Khách Hàng vào panner_chucnang
             //Nut Hoa Don
             /* HoaDonControl hoaDonControl = new HoaDonControl // Tạo một điều khiển HoaDonControl
@@ -64,7 +64,7 @@ namespace HE_THONG_BAN_XE.FormHeThong
             };
             Menu_Pannel.Controls.Add(hoaDonControl); // Thêm điều khiển HoaDonControl vào panel Menu_Pannel
             Panel panelHoaDon = CreateMenuPanel("🧾", "Hóa Đơn", Color.LightSkyBlue, "HoaDonControl");
-            panelHoaDon.Location = new Point(0, 230); // Đặt vị trí panel Hóa Đơn bên dưới panel Khách Hàng
+            panelHoaDon.Location = new Point(0, 200); // Đặt vị trí panel Hóa Đơn bên dưới panel Khách Hàng
             panner_chucnang.Controls.Add(panelHoaDon); // Thêm panel Hóa Đơn vào panner_chucnang
             */
             //Nut Khach Hang Khuyen Mai
@@ -77,10 +77,8 @@ namespace HE_THONG_BAN_XE.FormHeThong
             };
             Menu_Pannel.Controls.Add(khachHangKhuyenMaiControl); // Thêm điều khiển KhachHangKhuyenMaiControl vào panel Menu_Pannel
             Panel panelKhachHangKhuyenMai = CreateMenuPanel("🎁", "Khách Hàng Khuyến Mãi", Color.LightSkyBlue, "KhachHangKhuyenMaiControl");
-            panelKhachHangKhuyenMai.Location = new Point(0, 280); // Đặt vị trí panel Khách Hàng Khuyến Mãi bên dưới panel Hóa Đơn
+            panelKhachHangKhuyenMai.Location = new Point(0, 150); // Đặt vị trí panel Khách Hàng Khuyến Mãi bên dưới panel Hóa Đơn
             panner_chucnang.Controls.Add(panelKhachHangKhuyenMai); // Thêm panel Khách Hàng Khuyến Mãi vào panner_chucnang
-
-             
         }
 
         private Panel CreateMenuPanel(string iconText, string labelText, Color bgColor, string tagName) // Tạo panel menu với biểu tượng, nhãn, màu nền và tên thẻ

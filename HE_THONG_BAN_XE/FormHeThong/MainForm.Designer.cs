@@ -45,10 +45,10 @@
             panner_chucnang.BorderStyle = BorderStyle.Fixed3D;
             panner_chucnang.Controls.Add(Nut_Exit);
             panner_chucnang.ForeColor = Color.Indigo;
-            panner_chucnang.Location = new Point(1, 2);
+            panner_chucnang.Location = new Point(1, 83);
             panner_chucnang.Margin = new Padding(0);
             panner_chucnang.Name = "panner_chucnang";
-            panner_chucnang.Size = new Size(179, 802);
+            panner_chucnang.Size = new Size(179, 721);
             panner_chucnang.TabIndex = 0;
             panner_chucnang.Paint += panel1_Paint;
             // 
@@ -57,7 +57,7 @@
             Nut_Exit.BackColor = Color.Red;
             Nut_Exit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Nut_Exit.ForeColor = Color.GhostWhite;
-            Nut_Exit.Location = new Point(9, 747);
+            Nut_Exit.Location = new Point(15, 666);
             Nut_Exit.Name = "Nut_Exit";
             Nut_Exit.Size = new Size(157, 42);
             Nut_Exit.TabIndex = 2;
@@ -70,7 +70,7 @@
             label1.BackColor = Color.Indigo;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Lavender;
-            label1.Location = new Point(358, 14);
+            label1.Location = new Point(464, 14);
             label1.Name = "label1";
             label1.Size = new Size(430, 48);
             label1.TabIndex = 1;
@@ -101,9 +101,9 @@
             panel2.BackColor = Color.Indigo;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(label1);
-            panel2.Location = new Point(183, 2);
+            panel2.Location = new Point(1, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1147, 75);
+            panel2.Size = new Size(1329, 75);
             panel2.TabIndex = 0;
             panel2.Paint += panel2_Paint;
             // 

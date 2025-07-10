@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HE_THONG_BAN_XE.Connect;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,47 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         {
             InitializeComponent();
         }
+        private void ClearForm()
+        {
+            txtMaKM.Clear();
+            txtMaHoaDon.Clear();
+            txtGTKM.Clear();
+            txtGhiChu.Clear();
+            txtMaKH.Clear();
+            DateTimeNgayAD.Value = DateTime.Now;
+            txtMaKM.Focus();
+        }
+        private void Load()
+        {
+            using (var Context = new DBNhanVien)
+            {
+   
+            }
+        }
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+       
     }
 }
