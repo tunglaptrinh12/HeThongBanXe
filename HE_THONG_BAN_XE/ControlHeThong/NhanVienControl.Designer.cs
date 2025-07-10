@@ -75,30 +75,30 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Times New Roman", 10.8F);
+            label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label2.Location = new Point(25, 37);
             label2.Name = "label2";
-            label2.Size = new Size(118, 20);
+            label2.Size = new Size(134, 25);
             label2.TabIndex = 1;
             label2.Text = "Mã Nhân Viên:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Times New Roman", 10.8F);
+            label3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label3.Location = new Point(74, 82);
             label3.Name = "label3";
-            label3.Size = new Size(69, 20);
+            label3.Size = new Size(74, 25);
             label3.TabIndex = 2;
             label3.Text = "Họ Tên:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Times New Roman", 10.8F);
+            label4.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label4.Location = new Point(59, 125);
             label4.Name = "label4";
-            label4.Size = new Size(84, 20);
+            label4.Size = new Size(91, 25);
             label4.TabIndex = 3;
             label4.Text = "Giới Tính:";
             label4.Click += label4_Click;
@@ -106,10 +106,10 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Times New Roman", 10.8F);
+            label5.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label5.Location = new Point(58, 173);
             label5.Name = "label5";
-            label5.Size = new Size(85, 20);
+            label5.Size = new Size(96, 25);
             label5.TabIndex = 4;
             label5.Text = "Năm Sinh:";
             label5.Click += label5_Click;
@@ -117,10 +117,10 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Times New Roman", 10.8F);
+            label6.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label6.Location = new Point(25, 221);
             label6.Name = "label6";
-            label6.Size = new Size(118, 20);
+            label6.Size = new Size(131, 25);
             label6.TabIndex = 5;
             label6.Text = "Số Điện Thoại:";
             label6.Click += label6_Click;
@@ -128,20 +128,20 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Times New Roman", 10.8F);
+            label7.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label7.Location = new Point(89, 269);
             label7.Name = "label7";
-            label7.Size = new Size(54, 20);
+            label7.Size = new Size(60, 25);
             label7.TabIndex = 6;
             label7.Text = "Email:";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Times New Roman", 10.8F);
+            label8.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label8.Location = new Point(69, 306);
             label8.Name = "label8";
-            label8.Size = new Size(74, 20);
+            label8.Size = new Size(81, 25);
             label8.TabIndex = 7;
             label8.Text = "chức Vụ:";
             // 
@@ -183,10 +183,10 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Times New Roman", 10.8F);
+            label9.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label9.Location = new Point(55, 353);
             label9.Name = "label9";
-            label9.Size = new Size(88, 20);
+            label9.Size = new Size(94, 25);
             label9.TabIndex = 17;
             label9.Text = "Tìm Kiếm:";
             // 

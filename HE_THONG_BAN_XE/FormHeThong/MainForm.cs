@@ -167,11 +167,15 @@ namespace HE_THONG_BAN_XE.FormHeThong
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;         // Phóng to
+            this.FormBorderStyle = FormBorderStyle.None;          // Ẩn viền (nếu muốn kiểu full real)
+            this.Bounds = Screen.PrimaryScreen.Bounds;            // Chiếm toàn màn hình
 
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
 
         }
 
