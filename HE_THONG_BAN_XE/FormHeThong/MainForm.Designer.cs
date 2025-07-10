@@ -41,7 +41,7 @@
             // 
             // panner_chucnang
             // 
-            panner_chucnang.BackColor = Color.DodgerBlue;
+            panner_chucnang.BackColor = Color.LightSkyBlue;
             panner_chucnang.BorderStyle = BorderStyle.Fixed3D;
             panner_chucnang.Controls.Add(Nut_Exit);
             panner_chucnang.ForeColor = Color.Indigo;
@@ -55,6 +55,8 @@
             // Nut_Exit
             // 
             Nut_Exit.BackColor = Color.Red;
+            Nut_Exit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Nut_Exit.ForeColor = Color.GhostWhite;
             Nut_Exit.Location = new Point(9, 747);
             Nut_Exit.Name = "Nut_Exit";
             Nut_Exit.Size = new Size(157, 42);

@@ -23,22 +23,72 @@ namespace HE_THONG_BAN_XE.FormHeThong
             NhanVienControl nhanVienUC = new NhanVienControl // Tạo một điều khiển Nhân ViênControl
             {
                 Name = "NhanVienControl",                    // Tên của điều khiển
-                Dock = DockStyle.Fill,
-                Visible = false
+                Dock = DockStyle.Fill,                       // Đặt điều khiển lấp đầy không gian của panel
+                Visible = false                              // Ban đầu ẩn điều khiển này
             };
             Menu_Pannel.Controls.Add(nhanVienUC);
 
 
-            Panel panelKH = CreateMenuPanel("👥", "Nhân Viên", Color.FromArgb(46, 204, 113), "NhanVienControl");
-            panelKH.Location = new Point(0, 50); // đặt bên dưới nút Xe chẳng hạn
-            panner_chucnang.Controls.Add(panelKH); // hoặc panner_chucnang nếu mày dùng tên khác
+            Panel panelNV = CreateMenuPanel("👥", "Nhân Viên", Color.LightSkyBlue, "NhanVienControl");
+            panelNV.Location = new Point(0, 80 ); // đặt bên dưới nút Xe chẳng hạn
+            panner_chucnang.Controls.Add(panelNV); // hoặc panner_chucnang nếu mày dùng tên khác
+
+            //Nut Xe
+            XeControl xeControl = new XeControl // Tạo một điều khiển XeControl
+            {
+                Name = "XeControl",                          // Tên của điều khiển
+                Dock = DockStyle.Fill,                       // Đặt điều khiển lấp đầy không gian của panel
+                Visible = false                              // Ban đầu ẩn điều khiển này
+            };
+            Menu_Pannel.Controls.Add(xeControl); // Thêm điều khiển XeControl vào panel Menu_Pannel
+            Panel panelXe = CreateMenuPanel("🚗", "Xe", Color.LightSkyBlue, "XeControl");
+            panelXe.Location = new Point(0,130); // Đặt vị trí panel Xe bên dưới panel Nhân Viên
+            panner_chucnang.Controls.Add(panelXe); // Thêm panel Xe vào panner_chucnang
+            //Nut Khach Hang 
+            KhachHangControl khachHangControl = new KhachHangControl // Tạo một điều khiển KhachHangControl
+            {
+                Name = "KhachHangControl",                  // Tên của điều khiển
+                Dock = DockStyle.Fill,                       // Đặt điều khiển lấp đầy không gian của panel
+                Visible = false                              // Ban đầu ẩn điều khiển này
+            };
+            Menu_Pannel.Controls.Add(khachHangControl); // Thêm điều khiển KhachHangControl vào panel Menu_Pannel
+            Panel panelKhachHang = CreateMenuPanel("👤", "Khách Hàng", Color.LightSkyBlue, "KhachHangControl");
+            panelKhachHang.Location = new Point(0, 180); // Đặt vị trí panel Khách Hàng bên dưới panel Xe
+            panner_chucnang.Controls.Add(panelKhachHang); // Thêm panel Khách Hàng vào panner_chucnang
+            //Nut Hoa Don
+            /* HoaDonControl hoaDonControl = new HoaDonControl // Tạo một điều khiển HoaDonControl
+            {
+                Name = "HoaDonControl",                      // Tên của điều khiển
+                Dock = DockStyle.Fill,                       // Đặt điều khiển lấp đầy không gian của panel
+                Visible = false                              // Ban đầu ẩn điều khiển này
+            };
+            Menu_Pannel.Controls.Add(hoaDonControl); // Thêm điều khiển HoaDonControl vào panel Menu_Pannel
+            Panel panelHoaDon = CreateMenuPanel("🧾", "Hóa Đơn", Color.LightSkyBlue, "HoaDonControl");
+            panelHoaDon.Location = new Point(0, 230); // Đặt vị trí panel Hóa Đơn bên dưới panel Khách Hàng
+            panner_chucnang.Controls.Add(panelHoaDon); // Thêm panel Hóa Đơn vào panner_chucnang
+            */
+            //Nut Khach Hang Khuyen Mai
+            
+             KhachHangKhuyenMaiControl khachHangKhuyenMaiControl = new KhachHangKhuyenMaiControl // Tạo một điều khiển KhachHangKhuyenMaiControl
+            {
+              Name = "KhachHangKhuyenMaiControl", // Tên của điều khiển
+              Dock = DockStyle.Fill, // Đặt điều khiển lấp đầy không gian của panel
+              Visible = false // Ban đầu ẩn điều khiển này
+            };
+            Menu_Pannel.Controls.Add(khachHangKhuyenMaiControl); // Thêm điều khiển KhachHangKhuyenMaiControl vào panel Menu_Pannel
+            Panel panelKhachHangKhuyenMai = CreateMenuPanel("🎁", "Khách Hàng Khuyến Mãi", Color.LightSkyBlue, "KhachHangKhuyenMaiControl");
+            panelKhachHangKhuyenMai.Location = new Point(0, 280); // Đặt vị trí panel Khách Hàng Khuyến Mãi bên dưới panel Hóa Đơn
+            panner_chucnang.Controls.Add(panelKhachHangKhuyenMai); // Thêm panel Khách Hàng Khuyến Mãi vào panner_chucnang
+
+             
         }
+
         private Panel CreateMenuPanel(string iconText, string labelText, Color bgColor, string tagName) // Tạo panel menu với biểu tượng, nhãn, màu nền và tên thẻ
         {
             Panel panel = new Panel // Tạo panel mới
             {
                 Size = new Size(179, 50), // Kích thước của panel
-                BackColor = bgColor, // Màu nền của panel
+                BackColor = Color.LightSkyBlue, // Màu nền của panel
                 Cursor = Cursors.Hand, // Hiển thị con trỏ tay khi di chuột qua panel
                 Tag = tagName // Gán tên thẻ cho panel để sử dụng sau này
             };
@@ -69,12 +119,23 @@ namespace HE_THONG_BAN_XE.FormHeThong
             panel.Click += (s, e) => OnPanelClick(tagName);
 
             // Hover
-            panel.MouseEnter += (s, e) => panel.BackColor = ControlPaint.Dark(bgColor, 0.1f); // Hover in
-            panel.MouseLeave += (s, e) => panel.BackColor = bgColor; // Hover out
+ 
+            panel.MouseEnter += (s, e) => panel.BackColor = ControlPaint.Dark(bgColor, 0.1f); // Hover in          
+            icon.MouseEnter += (s, e) => panel.BackColor = ControlPaint.Dark(bgColor, 0.1f); // Hover in
+            label.MouseEnter += (s, e) => panel.BackColor = ControlPaint.Dark(bgColor, 0.1f); // Hover in
+
+            panel.MouseLeave += (s, e) => panel.BackColor = bgColor;
+            icon.MouseLeave += (s, e) => panel.BackColor = bgColor;
+            label.MouseLeave += (s, e) => panel.BackColor = bgColor;
 
             panel.Controls.Add(icon); // Thêm nhãn biểu tượng vào panel
             panel.Controls.Add(label); // Thêm nhãn biểu tượng và nhãn văn bản vào panel
             return panel;
+        }
+
+        private void Label_MouseEnter(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void OnPanelClick(string tagName)
