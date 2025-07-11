@@ -27,13 +27,6 @@ namespace HE_THONG_BAN_XE.ControlHeThong
             DateTimeNgayAD.Value = DateTime.Now;
             txtMaKM.Focus();
         }
-        private void Load()
-        {
-            using (var Context = new DBNhanVien)
-            {
-   
-            }
-        }
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
@@ -58,6 +51,10 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         {
 
         }
-       
+
+        private void KhachHangKhuyenMaiControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -180,7 +180,7 @@
             checkBox_trusk_xe.TabIndex = 22;
             checkBox_trusk_xe.Text = "TRUSK";
             checkBox_trusk_xe.UseVisualStyleBackColor = true;
-            checkBox_trusk_xe.CheckedChanged += checkBox_trusk_xe_CheckedChanged;
+            //checkBox_trusk_xe.CheckedChanged += checkBox_trusk_xe_CheckedChanged;
             // 
             // textBox_soghe_xe
             // 

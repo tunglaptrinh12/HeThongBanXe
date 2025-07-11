@@ -81,6 +81,7 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            groupBox1.ForeColor = Color.DarkBlue;
             groupBox1.Location = new Point(28, 69);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(719, 375);
@@ -211,6 +212,7 @@
             groupBox2.Controls.Add(NutSua);
             groupBox2.Controls.Add(NutThem);
             groupBox2.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            groupBox2.ForeColor = Color.DarkBlue;
             groupBox2.Location = new Point(753, 69);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(375, 375);
@@ -289,6 +291,7 @@
             Controls.Add(label1);
             Name = "KhachHangKhuyenMaiControl";
             Size = new Size(1147, 721);
+            Load += KhachHangKhuyenMaiControl_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_nhanvien).EndInit();
