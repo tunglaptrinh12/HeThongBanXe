@@ -34,7 +34,6 @@
             checkBox_supercar_xe = new CheckBox();
             checkBox_sedan_xe = new CheckBox();
             checkBox_suv_xe = new CheckBox();
-            checkBox_van_xe = new CheckBox();
             checkBox_trusk_xe = new CheckBox();
             textBox_soghe_xe = new TextBox();
             radioButton_cu_xe = new RadioButton();
@@ -67,6 +66,7 @@
             button_xoa_xe = new Button();
             button_sua_xe = new Button();
             button_them_xe = new Button();
+            checkBox_van_xe = new CheckBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_xe).BeginInit();
             groupBox2.SuspendLayout();
@@ -85,11 +85,11 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(checkBox_van_xe);
             groupBox1.Controls.Add(textBox_hangxe_xe);
             groupBox1.Controls.Add(checkBox_supercar_xe);
             groupBox1.Controls.Add(checkBox_sedan_xe);
             groupBox1.Controls.Add(checkBox_suv_xe);
-            groupBox1.Controls.Add(checkBox_van_xe);
             groupBox1.Controls.Add(checkBox_trusk_xe);
             groupBox1.Controls.Add(textBox_soghe_xe);
             groupBox1.Controls.Add(radioButton_cu_xe);
@@ -121,7 +121,6 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin Xe";
-            //groupBox1.Enter += this.groupBox1_Enter;
             // 
             // textBox_hangxe_xe
             // 
@@ -160,17 +159,6 @@
             checkBox_suv_xe.Text = "SUV";
             checkBox_suv_xe.UseVisualStyleBackColor = true;
             // 
-            // checkBox_van_xe
-            // 
-            checkBox_van_xe.AutoSize = true;
-            checkBox_van_xe.Location = new Point(233, 150);
-            checkBox_van_xe.Name = "checkBox_van_xe";
-            checkBox_van_xe.Size = new Size(68, 24);
-            checkBox_van_xe.TabIndex = 23;
-            checkBox_van_xe.Text = "VAN";
-            checkBox_van_xe.UseVisualStyleBackColor = true;
-            checkBox_van_xe.CheckedChanged += checkBox2_CheckedChanged;
-            // 
             // checkBox_trusk_xe
             // 
             checkBox_trusk_xe.AutoSize = true;
@@ -180,7 +168,6 @@
             checkBox_trusk_xe.TabIndex = 22;
             checkBox_trusk_xe.Text = "TRUSK";
             checkBox_trusk_xe.UseVisualStyleBackColor = true;
-            //checkBox_trusk_xe.CheckedChanged += checkBox_trusk_xe_CheckedChanged;
             // 
             // textBox_soghe_xe
             // 
@@ -489,8 +476,18 @@
             button_them_xe.Size = new Size(163, 84);
             button_them_xe.TabIndex = 0;
             button_them_xe.Text = "Thêm Xe";
-            button_them_xe.UseVisualStyleBackColor = true;
+            button_them_xe.UseVisualStyleBackColor = false;
             button_them_xe.Click += button_them_xe_Click;
+            // 
+            // checkBox_van_xe
+            // 
+            checkBox_van_xe.AutoSize = true;
+            checkBox_van_xe.Location = new Point(225, 147);
+            checkBox_van_xe.Name = "checkBox_van_xe";
+            checkBox_van_xe.Size = new Size(68, 24);
+            checkBox_van_xe.TabIndex = 28;
+            checkBox_van_xe.Text = "VAN";
+            checkBox_van_xe.UseVisualStyleBackColor = true;
             // 
             // XeControl
             // 
@@ -538,7 +535,6 @@
         private RadioButton radioButton_cu_xe;
         private RadioButton radioButton_moi_xe;
         private CheckBox checkBox_suv_xe;
-        private CheckBox checkBox_van_xe;
         private CheckBox checkBox_trusk_xe;
         private TextBox textBox_soghe_xe;
         private CheckBox checkBox_supercar_xe;
@@ -552,5 +548,6 @@
         private Button button_tatca_xe;
         private Button button_chuaban_xe;
         private Button button_daban_xe;
+        private CheckBox checkBox_van_xe;
     }
 }

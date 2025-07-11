@@ -44,8 +44,27 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                 var list = Context.nhanViens.ToList();
                 dataGridView_nhanvien.DataSource = list;
                 FormatDataGridView();
-                
             }
+            if (dataGridView_nhanvien.Columns.Contains("MaNV"))
+            {
+                dataGridView_nhanvien.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
+                dataGridView_nhanvien.Columns["MaNV"].Width = 130;
+            }
+            if (dataGridView_nhanvien.Columns.Contains("TenNV"))
+            { 
+                dataGridView_nhanvien.Columns["TenNV"].HeaderText = "Tên Nhân Viên";
+                dataGridView_nhanvien.Columns["TenNV"].Width = 180;
+            }
+            if (dataGridView_nhanvien.Columns.Contains("NamSinh"))
+                dataGridView_nhanvien.Columns["NamSinh"].HeaderText = "Ngày Sinh";
+            if (dataGridView_nhanvien.Columns.Contains("GioiTinh"))
+                dataGridView_nhanvien.Columns["GioiTinh"].HeaderText = "Giới Tính";
+            if (dataGridView_nhanvien.Columns.Contains("DiaChi"))
+                dataGridView_nhanvien.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+            if (dataGridView_nhanvien.Columns.Contains("SoDienThoai"))
+                dataGridView_nhanvien.Columns["SDT"].HeaderText = "Số Điện Thoại";
+            if (dataGridView_nhanvien.Columns.Contains("ChucVu"))
+                dataGridView_nhanvien.Columns["ChucVu"].HeaderText = "Chức Vụ";;
         }
         private void FormatDataGridView()
         {
@@ -53,7 +72,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
 
             dataGridView_nhanvien.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
             dataGridView_nhanvien.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridView_nhanvien.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dataGridView_nhanvien.ColumnHeadersDefaultCellStyle.Font = new Font("Time New Roman", 10, FontStyle.Bold);
 
             dataGridView_nhanvien.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             dataGridView_nhanvien.DefaultCellStyle.SelectionBackColor = Color.LightBlue;

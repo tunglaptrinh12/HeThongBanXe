@@ -236,6 +236,8 @@
             // 
             // dateTimePicker_namsinh_nhanvien
             // 
+            dateTimePicker_namsinh_nhanvien.CustomFormat = "                            dd/MM/yyyy";
+            dateTimePicker_namsinh_nhanvien.Format = DateTimePickerFormat.Custom;
             dateTimePicker_namsinh_nhanvien.Location = new Point(149, 166);
             dateTimePicker_namsinh_nhanvien.Name = "dateTimePicker_namsinh_nhanvien";
             dateTimePicker_namsinh_nhanvien.Size = new Size(505, 28);

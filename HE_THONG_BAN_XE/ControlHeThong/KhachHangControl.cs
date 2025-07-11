@@ -42,6 +42,22 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                 dataGridView_khachhang.DataSource = list;
                 FormatDataGridView();
             }
+            if (dataGridView_khachhang.Columns.Contains("MaKH"))
+                dataGridView_khachhang.Columns["MaKH"].HeaderText = "Mã Khách Hàng";
+            if (dataGridView_khachhang.Columns.Contains("TenKH"))
+                dataGridView_khachhang.Columns["TenKH"].HeaderText = "Tên Khách Hàng";
+            if (dataGridView_khachhang.Columns.Contains("NgaySinh"))
+                dataGridView_khachhang.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
+            if (dataGridView_khachhang.Columns.Contains("GioiTinh"))
+                dataGridView_khachhang.Columns["GioiTinh"].HeaderText = "Giới Tính";
+            if (dataGridView_khachhang.Columns.Contains("DiaChi"))
+                dataGridView_khachhang.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+            if (dataGridView_khachhang.Columns.Contains("SoDienThoai"))
+                dataGridView_khachhang.Columns["SDT"].HeaderText = "Số Điện Thoại";
+            if (dataGridView_khachhang.Columns.Contains("HoaDons"))
+                dataGridView_khachhang.Columns["HoaDons"].HeaderText = "Hóa Đơn";
+            if (dataGridView_khachhang.Columns.Contains("DanhSachKhuyenMai"))
+                dataGridView_khachhang.Columns["DanhSachKhuyenMai"].HeaderText = "Khuyến Mãi";
         }
         private void FormatDataGridView()
         {
@@ -57,6 +73,18 @@ namespace HE_THONG_BAN_XE.ControlHeThong
 
             dataGridView_khachhang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+        // Hàm đổi nhiều tên cột dựa trên Dictionary
+        private void DoiTenNhieuCot(DataGridView dgv, Dictionary<string, string> danhSachTenCot)
+        {
+            foreach (var cot in danhSachTenCot)
+            {
+                if (dgv.Columns.Contains(cot.Key))
+                {
+                    dgv.Columns[cot.Key].HeaderText = cot.Value;
+                }
+            }
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -247,6 +275,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         private void KhachHangControl_Load(object sender, EventArgs e)
         {
             LoadKhachHang();
+            
         }
     }
 }
