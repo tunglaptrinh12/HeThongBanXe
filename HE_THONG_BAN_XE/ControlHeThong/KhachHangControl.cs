@@ -172,24 +172,13 @@ namespace HE_THONG_BAN_XE.ControlHeThong
             using (var context = new DBNhanVien())
             {
                 string ma = textBox_maKh_khachhang.Text.Trim();
-                // kiểm tra mã khách hàng tồn tại chưa
-                bool maKHExists = context.khachHangs.Any(nv => nv.MaKH == ma);
-                if (maKHExists)
-                {
-                    MessageBox.Show("Mã Khách hàng đã tồn tại. Vui lòng nhập mã khác!",
-                        "Lỗi", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    ClearForm();
-                    return;
-                }
                 // không được bỏ trống tên mã số điện thoại 
                 if (string.IsNullOrWhiteSpace(textBox_maKh_khachhang.Text) ||
                     string.IsNullOrWhiteSpace(textBox_tenKH_khachhang.Text) ||
                             string.IsNullOrWhiteSpace(textBox_sdt_khachhang.Text))
                 {
-                    MessageBox.Show("Vui lòng nhập mã,tên,số điện thoại khách hàng!", "thông báo",
+                    MessageBox.Show("Vui lòng nhập thông tin khách hàng!", "thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ClearForm();
                     return;
                 }
                 var kh = context.khachHangs.FirstOrDefault(n => n.MaKH == ma);
