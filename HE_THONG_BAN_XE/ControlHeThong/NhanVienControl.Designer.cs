@@ -358,6 +358,7 @@
             dataGridView_nhanvien.Location = new Point(20, 463);
             dataGridView_nhanvien.Name = "dataGridView_nhanvien";
             dataGridView_nhanvien.ReadOnly = true;
+            dataGridView_nhanvien.RowHeadersVisible = false;
             dataGridView_nhanvien.RowHeadersWidth = 51;
             dataGridView_nhanvien.Size = new Size(1111, 245);
             dataGridView_nhanvien.TabIndex = 10;

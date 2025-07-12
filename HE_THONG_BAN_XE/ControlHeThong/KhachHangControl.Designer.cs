@@ -336,6 +336,7 @@
             dataGridView_khachhang.Location = new Point(13, 386);
             dataGridView_khachhang.Name = "dataGridView_khachhang";
             dataGridView_khachhang.ReadOnly = true;
+            dataGridView_khachhang.RowHeadersVisible = false;
             dataGridView_khachhang.RowHeadersWidth = 51;
             dataGridView_khachhang.Size = new Size(1119, 322);
             dataGridView_khachhang.TabIndex = 3;

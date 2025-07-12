@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            checkBox_van_xe = new CheckBox();
             textBox_hangxe_xe = new TextBox();
             checkBox_supercar_xe = new CheckBox();
             checkBox_sedan_xe = new CheckBox();
@@ -66,7 +67,6 @@
             button_xoa_xe = new Button();
             button_sua_xe = new Button();
             button_them_xe = new Button();
-            checkBox_van_xe = new CheckBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_xe).BeginInit();
             groupBox2.SuspendLayout();
@@ -121,6 +121,16 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin Xe";
+            // 
+            // checkBox_van_xe
+            // 
+            checkBox_van_xe.AutoSize = true;
+            checkBox_van_xe.Location = new Point(233, 150);
+            checkBox_van_xe.Name = "checkBox_van_xe";
+            checkBox_van_xe.Size = new Size(68, 24);
+            checkBox_van_xe.TabIndex = 28;
+            checkBox_van_xe.Text = "VAN";
+            checkBox_van_xe.UseVisualStyleBackColor = true;
             // 
             // textBox_hangxe_xe
             // 
@@ -379,6 +389,7 @@
             dataGridView_xe.Location = new Point(20, 522);
             dataGridView_xe.Name = "dataGridView_xe";
             dataGridView_xe.ReadOnly = true;
+            dataGridView_xe.RowHeadersVisible = false;
             dataGridView_xe.RowHeadersWidth = 51;
             dataGridView_xe.Size = new Size(1108, 185);
             dataGridView_xe.TabIndex = 2;
@@ -479,16 +490,6 @@
             button_them_xe.UseVisualStyleBackColor = false;
             button_them_xe.Click += button_them_xe_Click;
             // 
-            // checkBox_van_xe
-            // 
-            checkBox_van_xe.AutoSize = true;
-            checkBox_van_xe.Location = new Point(225, 147);
-            checkBox_van_xe.Name = "checkBox_van_xe";
-            checkBox_van_xe.Size = new Size(68, 24);
-            checkBox_van_xe.TabIndex = 28;
-            checkBox_van_xe.Text = "VAN";
-            checkBox_van_xe.UseVisualStyleBackColor = true;
-            // 
             // XeControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -500,6 +501,7 @@
             Controls.Add(label1);
             Name = "XeControl";
             Size = new Size(1147, 721);
+            Load += XeControl_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_xe).EndInit();
