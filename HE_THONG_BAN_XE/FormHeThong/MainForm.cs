@@ -76,7 +76,7 @@ namespace HE_THONG_BAN_XE.FormHeThong
               Visible = false // Ban đầu ẩn điều khiển này
             };
             Menu_Pannel.Controls.Add(khachHangKhuyenMaiControl); // Thêm điều khiển KhachHangKhuyenMaiControl vào panel Menu_Pannel
-            Panel panelKhachHangKhuyenMai = CreateMenuPanel("🎁", "Khách Hàng Khuyến Mãi", Color.LightSkyBlue, "KhachHangKhuyenMaiControl");
+            Panel panelKhachHangKhuyenMai = CreateMenuPanel("🎁", "Khuyến Mãi", Color.LightSkyBlue, "KhachHangKhuyenMaiControl");
             panelKhachHangKhuyenMai.Location = new Point(0, 150); // Đặt vị trí panel Khách Hàng Khuyến Mãi bên dưới panel Hóa Đơn
             panner_chucnang.Controls.Add(panelKhachHangKhuyenMai); // Thêm panel Khách Hàng Khuyến Mãi vào panner_chucnang
         }

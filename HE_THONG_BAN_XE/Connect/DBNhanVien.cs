@@ -12,9 +12,10 @@ namespace HE_THONG_BAN_XE.Connect
     {
         public DbSet<NhanVien> nhanViens {  get; set; }
         public DbSet<Xe> xes { get; set; }
-        public DbSet<HoaDon> hoaDons { get; set; }
+        public DbSet<ChiTietHoaDon> chiTietHoaDons { get; set; }
         public DbSet<KhachHang> khachHangs { get; set; }
-        public DbSet<KhachHangDaKhuyenMai> khachHangDaKhuyenMais { get; set; }
+        public DbSet<KhuyenMai> khuyenMais { get; set; }
+        public DbSet<HoaDon> hoaDons { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -22,26 +23,32 @@ namespace HE_THONG_BAN_XE.Connect
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // KHÓA NGOẠI: HoaDon → KhachHang
-            modelBuilder.Entity<HoaDon>()
+            // KHÓA NGOẠI: ChiTietHoaDon → KhachHang
+            modelBuilder.Entity<ChiTietHoaDon>()
                 .HasOne<KhachHang>()
                 .WithMany()
                 .HasForeignKey(h => h.MaKH)
                 .HasConstraintName("FK_HoaDon_KhachHang");
 
-            // KHÓA NGOẠI: HoaDon → Xe
-            modelBuilder.Entity<HoaDon>()
+            // KHÓA NGOẠI: ChiTietHoaDon → Xe
+            modelBuilder.Entity<ChiTietHoaDon>()
                 .HasOne<Xe>()
                 .WithMany()
                 .HasForeignKey(h => h.MaXe)
                 .HasConstraintName("FK_HoaDon_Xe");
 
-            // KHÓA NGOẠI: KhachHangDaKhuyenMai → KhachHang
-            modelBuilder.Entity<KhachHangDaKhuyenMai>()
+            //KHÓA NGOẠI: ChiTietHoaDon -> KhuyenMai
+            modelBuilder.Entity<ChiTietHoaDon>()
+                .HasOne<KhuyenMai>()
+                .WithMany()
+                .HasForeignKey(h => h.MaKM)
+                .HasConstraintName("FK_HoaDon_KhuyenMai");
+            //KHÓA NGOẠI: ChiTietHoaDon -> KhachHang
+            modelBuilder.Entity<HoaDon>()
                 .HasOne<KhachHang>()
                 .WithMany()
-                .HasForeignKey(k => k.MaKH)
-                .HasConstraintName("FK_KhuyenMai_KhachHang");
+                .HasForeignKey(h => h.MaKH)
+                .HasConstraintName("FK_HoaDon1_KhachHang");
         }
 
     }

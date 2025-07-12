@@ -30,6 +30,10 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            groupBox4 = new GroupBox();
+            radioButton_daban_xe = new RadioButton();
+            radioButton_chuaban_xe = new RadioButton();
+            groupBox3 = new GroupBox();
             checkBox_van_xe = new CheckBox();
             textBox_hangxe_xe = new TextBox();
             checkBox_supercar_xe = new CheckBox();
@@ -39,8 +43,6 @@
             textBox_soghe_xe = new TextBox();
             radioButton_cu_xe = new RadioButton();
             radioButton_moi_xe = new RadioButton();
-            radioButton_chuaban_xe = new RadioButton();
-            radioButton_daban_xe = new RadioButton();
             textBox_mausac_xe = new TextBox();
             dateTimePicker_namsanxuat_xe = new DateTimePicker();
             textBox_giaban_xe = new TextBox();
@@ -68,6 +70,7 @@
             button_sua_xe = new Button();
             button_them_xe = new Button();
             groupBox1.SuspendLayout();
+            groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_xe).BeginInit();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -85,6 +88,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(groupBox4);
+            groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(checkBox_van_xe);
             groupBox1.Controls.Add(textBox_hangxe_xe);
             groupBox1.Controls.Add(checkBox_supercar_xe);
@@ -94,8 +99,6 @@
             groupBox1.Controls.Add(textBox_soghe_xe);
             groupBox1.Controls.Add(radioButton_cu_xe);
             groupBox1.Controls.Add(radioButton_moi_xe);
-            groupBox1.Controls.Add(radioButton_chuaban_xe);
-            groupBox1.Controls.Add(radioButton_daban_xe);
             groupBox1.Controls.Add(textBox_mausac_xe);
             groupBox1.Controls.Add(dateTimePicker_namsanxuat_xe);
             groupBox1.Controls.Add(textBox_giaban_xe);
@@ -115,12 +118,55 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = Color.DarkBlue;
-            groupBox1.Location = new Point(20, 57);
+            groupBox1.Location = new Point(22, 57);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(632, 459);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin Xe";
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(radioButton_daban_xe);
+            groupBox4.Controls.Add(radioButton_chuaban_xe);
+            groupBox4.Location = new Point(135, 373);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(478, 42);
+            groupBox4.TabIndex = 4;
+            groupBox4.TabStop = false;
+            // 
+            // radioButton_daban_xe
+            // 
+            radioButton_daban_xe.AutoSize = true;
+            radioButton_daban_xe.Location = new Point(70, 12);
+            radioButton_daban_xe.Name = "radioButton_daban_xe";
+            radioButton_daban_xe.Size = new Size(83, 24);
+            radioButton_daban_xe.TabIndex = 17;
+            radioButton_daban_xe.TabStop = true;
+            radioButton_daban_xe.Text = "đã bán";
+            radioButton_daban_xe.UseVisualStyleBackColor = true;
+            radioButton_daban_xe.CheckedChanged += radioButton_daban_xe_CheckedChanged;
+            // 
+            // radioButton_chuaban_xe
+            // 
+            radioButton_chuaban_xe.AutoSize = true;
+            radioButton_chuaban_xe.Location = new Point(278, 12);
+            radioButton_chuaban_xe.Name = "radioButton_chuaban_xe";
+            radioButton_chuaban_xe.Size = new Size(102, 24);
+            radioButton_chuaban_xe.TabIndex = 18;
+            radioButton_chuaban_xe.TabStop = true;
+            radioButton_chuaban_xe.Text = "chưa bán";
+            radioButton_chuaban_xe.UseVisualStyleBackColor = true;
+            radioButton_chuaban_xe.CheckedChanged += radioButton_chuaban_xe_CheckedChanged;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Location = new Point(205, 465);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(250, 38);
+            groupBox3.TabIndex = 29;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "groupBox3";
             // 
             // checkBox_van_xe
             // 
@@ -207,28 +253,6 @@
             radioButton_moi_xe.TabStop = true;
             radioButton_moi_xe.Text = "xe mới";
             radioButton_moi_xe.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_chuaban_xe
-            // 
-            radioButton_chuaban_xe.AutoSize = true;
-            radioButton_chuaban_xe.Location = new Point(359, 383);
-            radioButton_chuaban_xe.Name = "radioButton_chuaban_xe";
-            radioButton_chuaban_xe.Size = new Size(102, 24);
-            radioButton_chuaban_xe.TabIndex = 18;
-            radioButton_chuaban_xe.TabStop = true;
-            radioButton_chuaban_xe.Text = "chưa bán";
-            radioButton_chuaban_xe.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_daban_xe
-            // 
-            radioButton_daban_xe.AutoSize = true;
-            radioButton_daban_xe.Location = new Point(225, 383);
-            radioButton_daban_xe.Name = "radioButton_daban_xe";
-            radioButton_daban_xe.Size = new Size(83, 24);
-            radioButton_daban_xe.TabIndex = 17;
-            radioButton_daban_xe.TabStop = true;
-            radioButton_daban_xe.Text = "đã bán";
-            radioButton_daban_xe.UseVisualStyleBackColor = true;
             // 
             // textBox_mausac_xe
             // 
@@ -444,6 +468,7 @@
             button_tatca_xe.TabIndex = 5;
             button_tatca_xe.Text = "Tất Cả ";
             button_tatca_xe.UseVisualStyleBackColor = false;
+            button_tatca_xe.Click += button_tatca_xe_Click;
             // 
             // button_timkiem_xe
             // 
@@ -504,6 +529,8 @@
             Load += XeControl_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_xe).EndInit();
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
@@ -551,5 +578,7 @@
         private Button button_chuaban_xe;
         private Button button_daban_xe;
         private CheckBox checkBox_van_xe;
+        private GroupBox groupBox3;
+        private GroupBox groupBox4;
     }
 }

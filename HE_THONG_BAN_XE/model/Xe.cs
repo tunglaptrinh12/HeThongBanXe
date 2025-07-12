@@ -35,6 +35,6 @@ namespace HE_THONG_BAN_XE.model
         public Decimal GiaBan { get; set; }
         [Required, StringLength(20)]
         public String? TrangThai { get; set; } 
-        public virtual ICollection<HoaDon> HoaDons { get; set; } // Mối quan hệ với bảng HoaDon, mỗi xe có thể có nhiều hóa đơn liên quan
+        public virtual ICollection<ChiTietHoaDon> HoaDons { get; set; } // Mối quan hệ với bảng HoaDon, mỗi xe có thể có nhiều hóa đơn liên quan
     }
 }
