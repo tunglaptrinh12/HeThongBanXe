@@ -147,7 +147,6 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                 {
                     MessageBox.Show("Vui lòng Nhập đủ thông tin xe", "thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ClearForm();
                     return;
                 }
                 string maXE = textBox_maxe_xe.Text.Trim();
@@ -215,7 +214,268 @@ namespace HE_THONG_BAN_XE.ControlHeThong
 
         private void button_sua_xe_Click(object sender, EventArgs e)
         {
+            using (var context = new DBNhanVien())
+            {
+                string ma = textBox_maxe_xe.Text.Trim();
 
+                // Kiểm tra các trường bắt buộc
+                if (string.IsNullOrWhiteSpace(ma) ||
+                    string.IsNullOrWhiteSpace(textBox_tenxe_xe.Text) ||
+                    string.IsNullOrWhiteSpace(textBox_bienso_xe.Text) ||
+                    string.IsNullOrWhiteSpace(textBox_giaban_xe.Text) ||
+                    string.IsNullOrWhiteSpace(textBox_hangxe_xe.Text) ||
+                    string.IsNullOrWhiteSpace(textBox_mausac_xe.Text) ||
+                    string.IsNullOrWhiteSpace(textBox_soghe_xe.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin xe!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ClearForm();
+                    return;
+                }
+
+                var xe = context.xes.FirstOrDefault(x => x.MaXe == ma);
+                if (xe != null)
+                {
+                    xe.TenXe = textBox_tenxe_xe.Text.Trim();
+                    xe.HangXe = textBox_hangxe_xe.Text.Trim();
+                    xe.BienSo = textBox_bienso_xe.Text.Trim();
+                    xe.MauSac = textBox_mausac_xe.Text.Trim();
+                    xe.SoChoNgoi = int.Parse(textBox_soghe_xe.Text.Trim());
+                    xe.GiaBan = decimal.Parse(textBox_giaban_xe.Text.Trim());
+                    xe.NamSanXuat = dateTimePicker_namsanxuat_xe.Value;
+
+                    // Gộp loại xe từ checkbox
+                    List<string> loaiXeList = new List<string>();
+                    if (checkBox_sedan_xe.Checked) loaiXeList.Add("sedan");
+                    if (checkBox_supercar_xe.Checked) loaiXeList.Add("supercar");
+                    if (checkBox_suv_xe.Checked) loaiXeList.Add("suv");
+                    if (checkBox_trusk_xe.Checked) loaiXeList.Add("trusk");
+                    if (checkBox_van_xe.Checked) loaiXeList.Add("van");
+                    xe.LoaiXe = string.Join(" - ", loaiXeList);
+
+                    xe.MoiCu = radioButton_moi_xe.Checked ? "mới" : "cũ";
+                    xe.TrangThai = radioButton_daban_xe.Checked ? "đã bán" : "chưa bán";
+
+                    context.SaveChanges();
+
+                    MessageBox.Show("Đã sửa thông tin xe!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadXe();
+                    FormatDataGridView();
+                    ClearForm();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy xe có mã này để sửa!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ClearForm();
+                }
+            }
+        }
+
+        private void dataGridView_xe_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            if (i >= 0)
+            {
+                textBox_maxe_xe.Text = dataGridView_xe.Rows[i].Cells["MaXe"].Value.ToString();
+                textBox_tenxe_xe.Text = dataGridView_xe.Rows[i].Cells["TenXe"].Value.ToString();
+                textBox_hangxe_xe.Text = dataGridView_xe.Rows[i].Cells["HangXe"].Value.ToString();
+                textBox_bienso_xe.Text = dataGridView_xe.Rows[i].Cells["BienSo"].Value.ToString();
+                textBox_mausac_xe.Text = dataGridView_xe.Rows[i].Cells["MauSac"].Value.ToString();
+                textBox_soghe_xe.Text = dataGridView_xe.Rows[i].Cells["SoChoNgoi"].Value.ToString();
+                textBox_giaban_xe.Text = dataGridView_xe.Rows[i].Cells["GiaBan"].Value.ToString();
+
+                string loaixe = dataGridView_xe.Rows[i].Cells["LoaiXe"].Value.ToString();
+                checkBox_sedan_xe.Checked = loaixe.Contains("sedan");
+                checkBox_supercar_xe.Checked = loaixe.Contains("supercar");
+                checkBox_suv_xe.Checked = loaixe.Contains("suv");
+                checkBox_trusk_xe.Checked = loaixe.Contains("trusk");
+                checkBox_van_xe.Checked = loaixe.Contains("van");
+
+                string moicu = dataGridView_xe.Rows[i].Cells["MoiCu"].Value.ToString();
+                if (moicu == "mới") radioButton_moi_xe.Checked = true;
+                else radioButton_cu_xe.Checked = true;
+
+                string trangthai = dataGridView_xe.Rows[i].Cells["TrangThai"].Value.ToString();
+                if (trangthai == "đã bán") radioButton_daban_xe.Checked = true;
+                else radioButton_chuaban_xe.Checked = true;
+            }
+        }
+
+        private void button_xoa_xe_Click(object sender, EventArgs e)
+        {
+            using (var context = new DBNhanVien())
+            {
+                string ma = textBox_maxe_xe.Text.Trim();
+                var nv = context.xes.FirstOrDefault(n => n.MaXe == ma);
+                if (nv != null)
+                {
+                    context.xes.Remove(nv);
+                    context.SaveChanges();
+                    MessageBox.Show("Đã xóa xe!", "thông báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    LoadXe();
+                    FormatDataGridView();
+                    ClearForm();
+                }
+                else
+                {
+                    MessageBox.Show("không tìm Thấy xe!", "thông báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    ClearForm();
+                }
+            }
+        }
+
+        private void button_timkiem_xe_Click(object sender, EventArgs e)
+        {
+            using (var context = new DBNhanVien())
+            {
+                // Lấy dữ liệu bắt buộc
+                string ten = textBox_tenxe_xe.Text.Trim();
+                string soCho = textBox_soghe_xe.Text.Trim();
+                string giaBan = textBox_giaban_xe.Text.Trim();
+
+                // Kiểm tra bắt buộc
+                if (string.IsNullOrWhiteSpace(ten) ||
+                    string.IsNullOrWhiteSpace(soCho) ||
+                    string.IsNullOrWhiteSpace(giaBan))
+                {
+                    MessageBox.Show("Vui lòng nhập đủ: Tên xe, Số chỗ ngồi, Giá bán!", "Thiếu thông tin",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Kiểm tra ít nhất một checkbox loại xe
+                List<string> loaiXeList = new List<string>();
+                if (checkBox_trusk_xe.Checked) loaiXeList.Add("TRUSK");
+                if (checkBox_van_xe.Checked) loaiXeList.Add("VAN");
+                if (checkBox_suv_xe.Checked) loaiXeList.Add("SUV");
+                if (checkBox_sedan_xe.Checked) loaiXeList.Add("SEDAN");
+                if (checkBox_supercar_xe.Checked) loaiXeList.Add("SUPERCAR");
+
+                if (loaiXeList.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn ít nhất một Loại xe!", "Thiếu thông tin",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Bắt đầu truy vấn
+                var query = context.xes.AsQueryable();
+
+                query = query.Where(x => x.TenXe.Contains(ten));
+
+                if (int.TryParse(soCho, out int soChoInt))
+                    query = query.Where(x => x.SoChoNgoi == soChoInt);
+                else
+                {
+                    MessageBox.Show("Số chỗ ngồi không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (decimal.TryParse(giaBan, out decimal giaNhap))
+                {
+                    decimal tu = giaNhap - 500000;
+                    decimal den = giaNhap + 500000;
+                    query = query.Where(x => x.GiaBan >= tu && x.GiaBan <= den);
+                }
+                else
+                {
+                    MessageBox.Show("Giá bán không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Lọc theo loại xe (chứa bất kỳ trong danh sách)
+                query = query.Where(x => loaiXeList.Any(loai => x.LoaiXe.ToLower().Contains(loai.ToLower())));
+
+                // --- Không bắt buộc ---
+                string hang = textBox_hangxe_xe.Text.Trim();
+                string mau = textBox_mausac_xe.Text.Trim();
+                string bienSo = textBox_bienso_xe.Text.Trim();
+                string ma = textBox_maxe_xe.Text.Trim();
+
+                if (string.IsNullOrEmpty(ma))
+                    query = query.Where(x => x.MaXe.Contains(ma));
+                if (!string.IsNullOrWhiteSpace(hang))
+                    query = query.Where(x => x.HangXe.Contains(hang));
+
+                if (!string.IsNullOrWhiteSpace(mau))
+                    query = query.Where(x => x.MauSac.Contains(mau));
+
+                if (!string.IsNullOrWhiteSpace(bienSo))
+                    query = query.Where(x => x.BienSo.Contains(bienSo));
+
+                // Tình trạng mới/cũ
+                if (radioButton_moi_xe.Checked)
+                    query = query.Where(x => x.MoiCu.ToLower().Contains("mới"));
+                else if (radioButton_cu_xe.Checked)
+                    query = query.Where(x => x.MoiCu.ToLower().Contains("cũ"));
+
+                // Trạng thái đã bán / chưa bán
+                if (radioButton_daban_xe.Checked)
+                    query = query.Where(x => x.TrangThai.ToLower().Contains("đã bán"));
+                else if (radioButton_chuaban_xe.Checked)
+                    query = query.Where(x => x.TrangThai.ToLower().Contains("chưa bán"));
+
+                // Năm sản xuất
+                int selectedYear = dateTimePicker_namsanxuat_xe.Value.Year;
+                int currentYear = DateTime.Now.Year;
+                if (selectedYear != currentYear)
+                {
+                    query = query.Where(x => x.NamSanXuat.Year == selectedYear);
+                }
+
+                // Kết quả
+                var ketQua = query.ToList();
+                dataGridView_xe.DataSource = ketQua;
+
+                if (ketQua.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy xe phù hợp!", "Kết quả",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void button_daban_xe_Click(object sender, EventArgs e)
+        {
+            using (var context = new DBNhanVien())
+            {
+                var danhSachDaBan = context.xes
+                    .Where(x => x.TrangThai.ToLower().Contains("đã bán"))
+                    .ToList();
+
+                dataGridView_xe.DataSource = danhSachDaBan;
+
+                if (danhSachDaBan.Count == 0)
+                {
+                    MessageBox.Show("Không có xe nào đã bán!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void button_chuaban_xe_Click(object sender, EventArgs e)
+        {
+            using (var context = new DBNhanVien())
+            {
+                var danhSachChuaBan = context.xes
+                    .Where(x => x.TrangThai.ToLower().Contains("chưa bán"))
+                    .ToList();
+
+                dataGridView_xe.DataSource = danhSachChuaBan;
+
+                if (danhSachChuaBan.Count == 0)
+                {
+                    MessageBox.Show("Không có xe nào chưa bán!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

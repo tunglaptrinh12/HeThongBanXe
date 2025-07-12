@@ -417,6 +417,7 @@
             dataGridView_xe.RowHeadersWidth = 51;
             dataGridView_xe.Size = new Size(1108, 185);
             dataGridView_xe.TabIndex = 2;
+            dataGridView_xe.CellContentClick += dataGridView_xe_CellContentClick;
             // 
             // groupBox2
             // 
@@ -446,6 +447,7 @@
             button_chuaban_xe.TabIndex = 7;
             button_chuaban_xe.Text = "Chưa Bán";
             button_chuaban_xe.UseVisualStyleBackColor = false;
+            button_chuaban_xe.Click += button_chuaban_xe_Click;
             // 
             // button_daban_xe
             // 
@@ -457,6 +459,7 @@
             button_daban_xe.TabIndex = 6;
             button_daban_xe.Text = "Đã Bán";
             button_daban_xe.UseVisualStyleBackColor = false;
+            button_daban_xe.Click += button_daban_xe_Click;
             // 
             // button_tatca_xe
             // 
@@ -480,6 +483,7 @@
             button_timkiem_xe.TabIndex = 3;
             button_timkiem_xe.Text = "Tìm Kiếm";
             button_timkiem_xe.UseVisualStyleBackColor = false;
+            button_timkiem_xe.Click += button_timkiem_xe_Click;
             // 
             // button_xoa_xe
             // 
@@ -491,6 +495,7 @@
             button_xoa_xe.TabIndex = 2;
             button_xoa_xe.Text = "Xóa Xe";
             button_xoa_xe.UseVisualStyleBackColor = false;
+            button_xoa_xe.Click += button_xoa_xe_Click;
             // 
             // button_sua_xe
             // 
