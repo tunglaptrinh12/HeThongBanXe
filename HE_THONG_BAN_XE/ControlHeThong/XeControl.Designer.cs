@@ -500,8 +500,9 @@
             button_sua_xe.Name = "button_sua_xe";
             button_sua_xe.Size = new Size(163, 84);
             button_sua_xe.TabIndex = 1;
-            button_sua_xe.Text = "Sửa Giá Xe";
+            button_sua_xe.Text = "Sửa Thông Tin Xe";
             button_sua_xe.UseVisualStyleBackColor = false;
+            button_sua_xe.Click += button_sua_xe_Click;
             // 
             // button_them_xe
             // 

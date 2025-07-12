@@ -205,17 +205,6 @@ namespace HE_THONG_BAN_XE.ControlHeThong
             using (var context = new DBNhanVien())
             {
                 string ma = textBox_manv_nhanvien.Text.Trim();
-                // kiểm tra mã nhân viên tồn tại chưa
-                bool maNVExists = context.nhanViens.Any(nv => nv.MaNV == ma);
-                if (maNVExists)
-                {
-                    MessageBox.Show("Mã nhân viên đã tồn tại. Vui lòng nhập mã khác!",
-                        "Lỗi", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    ClearForm();
-                    return;
-                }
-                // không được bỏ trống tên mã số điện thoại nhân viên
                 if (string.IsNullOrWhiteSpace(textBox_manv_nhanvien.Text) ||
                     string.IsNullOrWhiteSpace(textBox_tennv_nhanvien.Text) ||
                             string.IsNullOrWhiteSpace(textBox_sdt_nhanvien.Text))

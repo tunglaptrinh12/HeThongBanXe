@@ -212,5 +212,10 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         {
 
         }
+
+        private void button_sua_xe_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
