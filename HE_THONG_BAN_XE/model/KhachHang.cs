@@ -31,6 +31,5 @@ namespace HE_THONG_BAN_XE.model
         public String? DiaChi { get; set ; }
         // Quan hệ
         public virtual ICollection<ChiTietHoaDon> ?HoaDons { get; set; } // Mối quan hệ với bảng HoaDon, mỗi khách hàng có thể có nhiều hóa đơn liên quan
-        public virtual ICollection<KhuyenMai> ?DanhSachKhuyenMai { get; set; } // Mối quan hệ với bảng KhachHangDaKhuyenMai, mỗi khách hàng có thể có nhiều chương trình khuyến mãi đã áp dụng
     }
 }
