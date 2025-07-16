@@ -157,7 +157,6 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                     MessageBox.Show("Mã xe đã tồn tại. Vui lòng nhập mã khác!",
                         "Lỗi", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
-                    ClearForm();
                     return;
                 }
                 var xe = new Xe
@@ -232,7 +231,17 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                     ClearForm();
                     return;
                 }
+                if (!int.TryParse(textBox_soghe_xe.Text.Trim(), out int soCho))
+                {
+                    MessageBox.Show("Số chỗ ngồi phải là số nguyên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
+                if (!decimal.TryParse(textBox_giaban_xe.Text.Trim(), out decimal giaBan))
+                {
+                    MessageBox.Show("Giá bán phải là số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 var xe = context.xes.FirstOrDefault(x => x.MaXe == ma);
                 if (xe != null)
                 {
@@ -240,8 +249,8 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                     xe.HangXe = textBox_hangxe_xe.Text.Trim();
                     xe.BienSo = textBox_bienso_xe.Text.Trim();
                     xe.MauSac = textBox_mausac_xe.Text.Trim();
-                    xe.SoChoNgoi = int.Parse(textBox_soghe_xe.Text.Trim());
-                    xe.GiaBan = decimal.Parse(textBox_giaban_xe.Text.Trim());
+                    xe.SoChoNgoi = soCho;
+                    xe.GiaBan = giaBan;
                     xe.NamSanXuat = dateTimePicker_namsanxuat_xe.Value;
 
                     // Gộp loại xe từ checkbox

@@ -19,7 +19,7 @@ namespace HE_THONG_BAN_XE.model
         [Required]
         public string? LoaiKM { get; set; }
         [Required]
-        public float GiaTriKM { get; set; }
+        public decimal GiaTriKM { get; set; }
         [Required]
         public string? DieuKien {  get; set; }
         [Required]
