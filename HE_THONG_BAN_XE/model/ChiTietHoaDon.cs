@@ -39,6 +39,6 @@ namespace HE_THONG_BAN_XE.model
         [ForeignKey("MaXe")]
         public virtual Xe? Xe { get; set; } // Mối quan hệ với bảng Xe, mỗi hóa đơn liên quan đến một xe cụ thể
         [ForeignKey("MaKM")]
-        public virtual KhuyenMai? KhuyenMai { get; set; } // Mối quan hệ với bảng khuyén mại, mỗi hóa đơn liên quan tới khuyến mại 
+        public virtual KhuyenMai? KhuyenMais { get; set; } // Mối quan hệ với bảng khuyén mại, mỗi hóa đơn liên quan tới khuyến mại 
     }
 }
