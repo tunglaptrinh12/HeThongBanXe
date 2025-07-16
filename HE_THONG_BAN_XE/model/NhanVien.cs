@@ -31,6 +31,6 @@ namespace HE_THONG_BAN_XE.model
         public String? Email { get; set; }
         [StringLength(50)]
         public String? ChucVu { get; set; }
-
+        // đã sửa
     }
 }
