@@ -16,6 +16,20 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         {
             InitializeComponent();
         }
+        private void LoadComboBoxMaXe()
+        {
+            using (var context = new DbContextXe())
+            {
+                var danhSachXe = context.Xes.ToList();
+
+                cbMaXe.DataSource = danhSachXe;
+                cbMaXe.DisplayMember = "MaXe";   // Hiển thị mã xe
+                cbMaXe.ValueMember = "MaXe";     // Giá trị là mã xe (có thể đổi sang TenXe nếu muốn)
+
+                cbMaXe.SelectedIndex = -1; // Không chọn sẵn xe nào
+            }
+        }
+
         public static class MaTuSinh
         {
             private static Random random = new Random();
@@ -28,6 +42,11 @@ namespace HE_THONG_BAN_XE.ControlHeThong
             }
         }
         private void BanHangControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
