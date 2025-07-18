@@ -34,8 +34,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSkyBlue;
             Name = "BaoCaoControl";
             Size = new Size(1147, 721);
+            Load += BaoCaoControl_Load;
             ResumeLayout(false);
         }
 
