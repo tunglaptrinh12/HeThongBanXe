@@ -83,7 +83,23 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                 var list = Context.khuyenMais.ToList();
                 dataGridView_khuyenmai.DataSource = list;
                 FormatDataGridView();
-            }          
+            }
+            if (dataGridView_khuyenmai.Columns.Contains("MaKM"))
+                dataGridView_khuyenmai.Columns["MaKM"].HeaderText = "Mã Khuyến Mại";
+            if (dataGridView_khuyenmai.Columns.Contains("TenKM"))
+                dataGridView_khuyenmai.Columns["TenKM"].HeaderText = "Tên Khuyến Mại";
+            if (dataGridView_khuyenmai.Columns.Contains("LoaiKM"))
+                dataGridView_khuyenmai.Columns["LoaiKM"].HeaderText = "Loại Khuyến Mại";
+            if (dataGridView_khuyenmai.Columns.Contains("GiaTriKM"))
+                dataGridView_khuyenmai.Columns["GiaTriKM"].HeaderText = "Giá trị khuyến mại";
+            if (dataGridView_khuyenmai.Columns.Contains("DieuKien"))
+                dataGridView_khuyenmai.Columns["DieuKien"].HeaderText = "Điều Kiện";
+            if (dataGridView_khuyenmai.Columns.Contains("NgayBatDau"))
+                dataGridView_khuyenmai.Columns["NgayBatDau"].HeaderText = "Ngày Bắt Đầu";
+            if (dataGridView_khuyenmai.Columns.Contains("NgayKetThuc"))
+                dataGridView_khuyenmai.Columns["NgayKetThuc"].HeaderText = "Ngày Kết Thúc";
+            if (dataGridView_khuyenmai.Columns.Contains("TrangThai"))
+                dataGridView_khuyenmai.Columns["TrangThai"].HeaderText = "Trạng Thái";
         }
         private void groupBox2_Enter(object sender, EventArgs e)
         {
@@ -459,6 +475,16 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                     dataGridView_khuyenmai.DataSource = null;
                 }
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
