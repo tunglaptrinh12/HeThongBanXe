@@ -57,19 +57,19 @@
             label6 = new Label();
             label3 = new Label();
             label2 = new Label();
-            dataGridView_khuyenmai = new DataGridView();
             groupBox2 = new GroupBox();
             NutTimKiem_km = new Button();
             NutShowAll_km = new Button();
             NutXoa_km = new Button();
             NutSua_km = new Button();
             NutThem_km = new Button();
+            dataGridView_khuyenmai = new DataGridView();
             groupBox1.SuspendLayout();
             groupBox_trangthai_km.SuspendLayout();
             groupBox_giamtienmat.SuspendLayout();
             groupBox_giamphantram.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView_khuyenmai).BeginInit();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_khuyenmai).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -114,6 +114,7 @@
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin khuyến mãi";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // groupBox_trangthai_km
             // 
@@ -165,9 +166,9 @@
             checkBox_khmuaxe_km.Font = new Font("Times New Roman", 12F);
             checkBox_khmuaxe_km.Location = new Point(223, 18);
             checkBox_khmuaxe_km.Name = "checkBox_khmuaxe_km";
-            checkBox_khmuaxe_km.Size = new Size(241, 26);
+            checkBox_khmuaxe_km.Size = new Size(246, 26);
             checkBox_khmuaxe_km.TabIndex = 14;
-            checkBox_khmuaxe_km.Text = "khách hàng đã từng mua xe";
+            checkBox_khmuaxe_km.Text = "Khách hàng đã từng mua xe";
             checkBox_khmuaxe_km.UseVisualStyleBackColor = true;
             checkBox_khmuaxe_km.CheckedChanged += checkBox_khmuaxe_km_CheckedChanged;
             // 
@@ -177,9 +178,9 @@
             checkBox_dongia1ty_km.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox_dongia1ty_km.Location = new Point(27, 19);
             checkBox_dongia1ty_km.Name = "checkBox_dongia1ty_km";
-            checkBox_dongia1ty_km.Size = new Size(141, 26);
+            checkBox_dongia1ty_km.Size = new Size(145, 26);
             checkBox_dongia1ty_km.TabIndex = 15;
-            checkBox_dongia1ty_km.Text = "dơn giá > 1 tỷ";
+            checkBox_dongia1ty_km.Text = "Đơn giá > 1 tỷ";
             checkBox_dongia1ty_km.UseVisualStyleBackColor = true;
             checkBox_dongia1ty_km.CheckedChanged += checkBox_dongia1ty_km_CheckedChanged;
             // 
@@ -196,9 +197,9 @@
             label10.Font = new Font("Times New Roman", 13.8F);
             label10.Location = new Point(92, 371);
             label10.Name = "label10";
-            label10.Size = new Size(112, 26);
+            label10.Size = new Size(108, 26);
             label10.TabIndex = 20;
-            label10.Text = "Tìm Kiếm:";
+            label10.Text = "Tìm kiếm:";
             // 
             // groupBox_giamphantram
             // 
@@ -248,12 +249,12 @@
             // 
             radioButton_phantram_km.AutoSize = true;
             radioButton_phantram_km.Font = new Font("Times New Roman", 13.8F);
-            radioButton_phantram_km.Location = new Point(458, 110);
+            radioButton_phantram_km.Location = new Point(430, 108);
             radioButton_phantram_km.Name = "radioButton_phantram_km";
-            radioButton_phantram_km.Size = new Size(230, 30);
+            radioButton_phantram_km.Size = new Size(235, 30);
             radioButton_phantram_km.TabIndex = 19;
             radioButton_phantram_km.TabStop = true;
-            radioButton_phantram_km.Text = "giảm theo phần trăm ";
+            radioButton_phantram_km.Text = "Giảm theo phần trăm ";
             radioButton_phantram_km.UseVisualStyleBackColor = true;
             radioButton_phantram_km.CheckedChanged += radioButton_phantram_km_CheckedChanged;
             // 
@@ -261,7 +262,7 @@
             // 
             radioButton_tienmat_km.AutoSize = true;
             radioButton_tienmat_km.Font = new Font("Times New Roman", 13.8F);
-            radioButton_tienmat_km.Location = new Point(239, 110);
+            radioButton_tienmat_km.Location = new Point(234, 110);
             radioButton_tienmat_km.Name = "radioButton_tienmat_km";
             radioButton_tienmat_km.Size = new Size(163, 30);
             radioButton_tienmat_km.TabIndex = 18;
@@ -281,11 +282,11 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Times New Roman", 13.8F);
-            label9.Location = new Point(88, 198);
+            label9.Location = new Point(91, 199);
             label9.Name = "label9";
-            label9.Size = new Size(113, 26);
+            label9.Size = new Size(109, 26);
             label9.TabIndex = 13;
-            label9.Text = "Điều Kiện:";
+            label9.Text = "Điều kiện:";
             // 
             // label8
             // 
@@ -326,17 +327,17 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(51, 238);
+            label7.Location = new Point(56, 238);
             label7.Name = "label7";
-            label7.Size = new Size(154, 26);
+            label7.Size = new Size(148, 26);
             label7.TabIndex = 3;
-            label7.Text = "Ngày áp dụng :";
+            label7.Text = "Ngày áp dụng:";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(30, 115);
+            label4.Location = new Point(30, 110);
             label4.Name = "label4";
             label4.Size = new Size(175, 26);
             label4.TabIndex = 2;
@@ -361,17 +362,17 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(7, 149);
+            label6.Location = new Point(13, 149);
             label6.Name = "label6";
-            label6.Size = new Size(198, 26);
+            label6.Size = new Size(192, 26);
             label6.TabIndex = 4;
-            label6.Text = "Giá trị khuyến mãi :";
+            label6.Text = "Giá trị khuyến mãi:";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(29, 74);
+            label3.Location = new Point(36, 73);
             label3.Name = "label3";
             label3.Size = new Size(176, 26);
             label3.TabIndex = 1;
@@ -382,23 +383,11 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(36, 33);
+            label2.Location = new Point(42, 38);
             label2.Name = "label2";
-            label2.Size = new Size(169, 26);
+            label2.Size = new Size(163, 26);
             label2.TabIndex = 0;
-            label2.Text = "Mã khuyến mãi :";
-            // 
-            // dataGridView_khuyenmai
-            // 
-            dataGridView_khuyenmai.BackgroundColor = Color.FloralWhite;
-            dataGridView_khuyenmai.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_khuyenmai.Location = new Point(17, 459);
-            dataGridView_khuyenmai.Name = "dataGridView_khuyenmai";
-            dataGridView_khuyenmai.ReadOnly = true;
-            dataGridView_khuyenmai.RowHeadersWidth = 51;
-            dataGridView_khuyenmai.Size = new Size(1111, 248);
-            dataGridView_khuyenmai.TabIndex = 11;
-            dataGridView_khuyenmai.CellContentClick += dataGridView_khuyenmai_CellContentClick;
+            label2.Text = "Mã khuyến mãi:";
             // 
             // groupBox2
             // 
@@ -425,7 +414,7 @@
             NutTimKiem_km.Name = "NutTimKiem_km";
             NutTimKiem_km.Size = new Size(338, 49);
             NutTimKiem_km.TabIndex = 5;
-            NutTimKiem_km.Text = "Tìm Kiếm";
+            NutTimKiem_km.Text = "Tìm kiếm";
             NutTimKiem_km.UseVisualStyleBackColor = false;
             NutTimKiem_km.Click += NutTimKiem_km_Click;
             // 
@@ -481,6 +470,19 @@
             NutThem_km.UseVisualStyleBackColor = false;
             NutThem_km.Click += NutThem_km_Click;
             // 
+            // dataGridView_khuyenmai
+            // 
+            dataGridView_khuyenmai.BackgroundColor = Color.FloralWhite;
+            dataGridView_khuyenmai.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_khuyenmai.Location = new Point(17, 459);
+            dataGridView_khuyenmai.Name = "dataGridView_khuyenmai";
+            dataGridView_khuyenmai.ReadOnly = true;
+            dataGridView_khuyenmai.RowHeadersVisible = false;
+            dataGridView_khuyenmai.RowHeadersWidth = 51;
+            dataGridView_khuyenmai.Size = new Size(1111, 248);
+            dataGridView_khuyenmai.TabIndex = 11;
+            dataGridView_khuyenmai.CellContentClick += dataGridView_khuyenmai_CellContentClick;
+            // 
             // KhachHangKhuyenMaiControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -501,8 +503,8 @@
             groupBox_giamtienmat.PerformLayout();
             groupBox_giamphantram.ResumeLayout(false);
             groupBox_giamphantram.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView_khuyenmai).EndInit();
             groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView_khuyenmai).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -511,7 +513,6 @@
 
         private Label label1;
         private GroupBox groupBox1;
-        private DataGridView dataGridView_khuyenmai;
         private GroupBox groupBox2;
         private Button NutThem_km;
         private Button NutShowAll_km;
@@ -545,5 +546,6 @@
         private GroupBox groupBox_trangthai_km;
         private RadioButton radioButton_kohoatdong_km;
         private RadioButton radioButton_hoatdong_km;
+        private DataGridView dataGridView_khuyenmai;
     }
 }

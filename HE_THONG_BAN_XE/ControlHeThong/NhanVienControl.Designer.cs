@@ -139,11 +139,12 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold);
-            label8.Location = new Point(73, 306);
+            label8.Location = new Point(68, 306);
             label8.Name = "label8";
             label8.Size = new Size(84, 20);
             label8.TabIndex = 7;
             label8.Text = "Chức Vụ:";
+            label8.Click += label8_Click;
             // 
             // groupBox_thongtin_nhanvien
             // 
@@ -196,9 +197,9 @@
             checkBox_thungan_nhanvien.AutoSize = true;
             checkBox_thungan_nhanvien.Location = new Point(478, 306);
             checkBox_thungan_nhanvien.Name = "checkBox_thungan_nhanvien";
-            checkBox_thungan_nhanvien.Size = new Size(108, 24);
+            checkBox_thungan_nhanvien.Size = new Size(105, 24);
             checkBox_thungan_nhanvien.TabIndex = 16;
-            checkBox_thungan_nhanvien.Text = "Thu Ngân";
+            checkBox_thungan_nhanvien.Text = "Thu ngân";
             checkBox_thungan_nhanvien.UseVisualStyleBackColor = true;
             // 
             // checkBox_nvbanhang_nhanvien
@@ -206,9 +207,9 @@
             checkBox_nvbanhang_nhanvien.AutoSize = true;
             checkBox_nvbanhang_nhanvien.Location = new Point(183, 306);
             checkBox_nvbanhang_nhanvien.Name = "checkBox_nvbanhang_nhanvien";
-            checkBox_nvbanhang_nhanvien.Size = new Size(193, 24);
+            checkBox_nvbanhang_nhanvien.Size = new Size(187, 24);
             checkBox_nvbanhang_nhanvien.TabIndex = 15;
-            checkBox_nvbanhang_nhanvien.Text = "Nhân viên Bán Hàng";
+            checkBox_nvbanhang_nhanvien.Text = "Nhân viên bán hàng";
             checkBox_nvbanhang_nhanvien.UseVisualStyleBackColor = true;
             // 
             // radioButton_nu_nhanvien
