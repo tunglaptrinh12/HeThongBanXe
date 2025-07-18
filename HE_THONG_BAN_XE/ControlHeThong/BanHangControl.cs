@@ -16,5 +16,10 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         {
             InitializeComponent();
         }
+
+        private void BanHangControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

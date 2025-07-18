@@ -35,7 +35,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Name = "BanHangControl";
-            Size = new Size(1297, 848);
+            Size = new Size(1147, 721);
+            Load += BanHangControl_Load;
             ResumeLayout(false);
         }
 
