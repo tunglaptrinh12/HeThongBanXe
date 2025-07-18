@@ -127,7 +127,21 @@
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
-
+        // Add this event handler method to fix CS0103
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Hide MainForm and show LoginForm
+            this.Hide();
+            var loginForm = new Login();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                this.Show(); // Hiện lại MainForm
+            }
+            else
+            {
+                Application.Exit(); // Nếu không đăng nhập, thoát hẳn
+            }
+        }
         #endregion
 
         private Panel panner_chucnang;

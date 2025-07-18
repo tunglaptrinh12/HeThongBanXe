@@ -188,12 +188,14 @@ namespace HE_THONG_BAN_XE.FormHeThong
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            this.Hide();
-            Login login = new Login();
-            login.ShowDialog();
-            this.Close();
+            if (keyData == Keys.Escape)
+            {
+                Application.Exit();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
