@@ -83,7 +83,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                 var list = Context.khuyenMais.ToList();
                 dataGridView_khuyenmai.DataSource = list;
                 FormatDataGridView();
-            }
+            }          
         }
         private void groupBox2_Enter(object sender, EventArgs e)
         {

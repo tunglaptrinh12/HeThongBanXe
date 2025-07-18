@@ -15,6 +15,9 @@ namespace HE_THONG_BAN_XE.model
         [Key]
         [Required]
         [MaxLength(20)]
+        public String? MaCTHD { get; set; }
+        [Required]
+        [MaxLength(50)]
         public String? MaHD { get; set; }
 
         [Required]
@@ -33,6 +36,8 @@ namespace HE_THONG_BAN_XE.model
         public Decimal ThanhTien { get; set; }
 
         // Khóa ngoại
+        [ForeignKey("MaHD")]
+        public virtual HoaDon? HoaDon { get; set; }
         [ForeignKey("MaKH")]
         public virtual KhachHang? KhachHang { get; set; } // Mối quan hệ với bảng KhachHang, mỗi hóa đơn thuộc về một khách hàng
 

@@ -24,5 +24,7 @@ namespace HE_THONG_BAN_XE.model
 
         [ForeignKey("MaKH")]
         public virtual KhachHang? KhachHang { get; set; }
+        public virtual ICollection<ChiTietHoaDon>? ChiTietHoaDons { get; set; }
+
     }
 }

@@ -10,7 +10,7 @@ namespace HE_THONG_BAN_XE.Connect
 {
     internal class DBNhanVien : DbContext
     {
-        public DbSet<NhanVien> nhanViens {  get; set; }
+        public DbSet<NhanVien> nhanViens { get; set; }
         public DbSet<Xe> xes { get; set; }
         public DbSet<ChiTietHoaDon> chiTietHoaDons { get; set; }
         public DbSet<KhachHang> khachHangs { get; set; }
@@ -28,27 +28,33 @@ namespace HE_THONG_BAN_XE.Connect
                 .HasOne<KhachHang>()
                 .WithMany()
                 .HasForeignKey(h => h.MaKH)
-                .HasConstraintName("FK_HoaDon_KhachHang");
+                .HasConstraintName("FK_ChiTietHoaDon_KhachHang");
 
             // KHÓA NGOẠI: ChiTietHoaDon → Xe
             modelBuilder.Entity<ChiTietHoaDon>()
                 .HasOne<Xe>()
                 .WithMany()
                 .HasForeignKey(h => h.MaXe)
-                .HasConstraintName("FK_HoaDon_Xe");
+                .HasConstraintName("FK_ChiTietHoaDon_Xe");
 
             //KHÓA NGOẠI: ChiTietHoaDon -> KhuyenMai
             modelBuilder.Entity<ChiTietHoaDon>()
                 .HasOne<KhuyenMai>()
                 .WithMany()
                 .HasForeignKey(h => h.MaKM)
-                .HasConstraintName("FK_HoaDon_KhuyenMai");
+                .HasConstraintName("FK_ChiTietHoaDon_KhuyenMai");
             //KHÓA NGOẠI: ChiTietHoaDon -> KhachHang
             modelBuilder.Entity<HoaDon>()
                 .HasOne<KhachHang>()
                 .WithMany()
                 .HasForeignKey(h => h.MaKH)
                 .HasConstraintName("FK_HoaDon1_KhachHang");
+            //khóa ngoại : ChiTietHoaDon -> HoaDon
+            modelBuilder.Entity<ChiTietHoaDon>()
+                .HasOne<HoaDon>()
+                .WithMany()
+                .HasForeignKey(h => h.MaHD)
+                .HasConstraintName("FK_ChiTietHoaDon_HoaDon");
         }
 
     }
