@@ -51,7 +51,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                 dataGridView_nhanvien.Columns["MaNV"].Width = 130;
             }
             if (dataGridView_nhanvien.Columns.Contains("TenNV"))
-            { 
+            {
                 dataGridView_nhanvien.Columns["TenNV"].HeaderText = "Tên Nhân Viên";
                 dataGridView_nhanvien.Columns["TenNV"].Width = 180;
             }
@@ -64,7 +64,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
             if (dataGridView_nhanvien.Columns.Contains("SoDienThoai"))
                 dataGridView_nhanvien.Columns["SDT"].HeaderText = "Số Điện Thoại";
             if (dataGridView_nhanvien.Columns.Contains("ChucVu"))
-                dataGridView_nhanvien.Columns["ChucVu"].HeaderText = "Chức Vụ";;
+                dataGridView_nhanvien.Columns["ChucVu"].HeaderText = "Chức Vụ"; ;
         }
         private void FormatDataGridView()
         {
@@ -80,7 +80,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
 
             dataGridView_nhanvien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-        
+
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -105,7 +105,22 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                 textBox_manv_nhanvien.Text = dataGridView_nhanvien.Rows[i].Cells["MaNV"].Value.ToString();
                 textBox_tennv_nhanvien.Text = dataGridView_nhanvien.Rows[i].Cells["TenNV"].Value.ToString();
                 string gioiTinh = dataGridView_nhanvien.Rows[i].Cells["GioiTinh"].Value.ToString();
-                if (gioiTinh == "Nam") radioButton_nam_nhanvien.Checked = true; else radioButton_nu_nhanvien.Checked = true;
+                if (gioiTinh == "Nam")
+                {
+                    radioButton_nam_nhanvien.Checked = true;
+                    radioButton_nu_nhanvien.Checked = false;
+                }
+                else if (gioiTinh == "Nữ")
+                {
+                    radioButton_nu_nhanvien.Checked = true;
+                    radioButton_nam_nhanvien.Checked = false;
+                }
+                else
+                {
+                    radioButton_nam_nhanvien.Checked = false;
+                    radioButton_nu_nhanvien.Checked = false;
+                }
+
                 dateTimePicker_namsinh_nhanvien.Value = Convert.ToDateTime(dataGridView_nhanvien.Rows[i].Cells["NamSinh"].Value);
                 textBox_sdt_nhanvien.Text = dataGridView_nhanvien.Rows[i].Cells["SDT"].Value.ToString();
                 textBox_email_nhanvien.Text = dataGridView_nhanvien.Rows[i].Cells["Email"].Value.ToString();
@@ -145,7 +160,8 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                 {
                     MaNV = textBox_manv_nhanvien.Text.Trim(),
                     TenNV = textBox_tennv_nhanvien.Text.Trim(),
-                    GioiTinh = radioButton_nam_nhanvien.Checked ? "Nam" : "Nữ",
+                    GioiTinh = radioButton_nam_nhanvien.Checked ? "Nam" :
+                               radioButton_nu_nhanvien.Checked ? "Nữ" : "N?",
                     NamSinh = dateTimePicker_namsinh_nhanvien.Value,
                     SDT = textBox_sdt_nhanvien.Text.Trim(),
                     Email = textBox_email_nhanvien.Text,
@@ -268,12 +284,17 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                     MessageBox.Show("không tìm thấy nhân viên!",
                         "thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ClearForm() ;
+                    ClearForm();
                 }
             }
         }
 
         private void radioButton_nam_nhanvien_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }

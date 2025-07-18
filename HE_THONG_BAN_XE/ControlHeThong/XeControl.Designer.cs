@@ -138,24 +138,24 @@
             // radioButton_daban_xe
             // 
             radioButton_daban_xe.AutoSize = true;
-            radioButton_daban_xe.Location = new Point(70, 12);
+            radioButton_daban_xe.Location = new Point(90, 12);
             radioButton_daban_xe.Name = "radioButton_daban_xe";
-            radioButton_daban_xe.Size = new Size(83, 24);
+            radioButton_daban_xe.Size = new Size(86, 24);
             radioButton_daban_xe.TabIndex = 17;
             radioButton_daban_xe.TabStop = true;
-            radioButton_daban_xe.Text = "đã bán";
+            radioButton_daban_xe.Text = "Đã bán";
             radioButton_daban_xe.UseVisualStyleBackColor = true;
             radioButton_daban_xe.CheckedChanged += radioButton_daban_xe_CheckedChanged;
             // 
             // radioButton_chuaban_xe
             // 
             radioButton_chuaban_xe.AutoSize = true;
-            radioButton_chuaban_xe.Location = new Point(278, 12);
+            radioButton_chuaban_xe.Location = new Point(269, 12);
             radioButton_chuaban_xe.Name = "radioButton_chuaban_xe";
-            radioButton_chuaban_xe.Size = new Size(102, 24);
+            radioButton_chuaban_xe.Size = new Size(107, 24);
             radioButton_chuaban_xe.TabIndex = 18;
             radioButton_chuaban_xe.TabStop = true;
-            radioButton_chuaban_xe.Text = "chưa bán";
+            radioButton_chuaban_xe.Text = "Chưa bán";
             radioButton_chuaban_xe.UseVisualStyleBackColor = true;
             radioButton_chuaban_xe.CheckedChanged += radioButton_chuaban_xe_CheckedChanged;
             // 
@@ -220,9 +220,9 @@
             checkBox_trusk_xe.AutoSize = true;
             checkBox_trusk_xe.Location = new Point(135, 150);
             checkBox_trusk_xe.Name = "checkBox_trusk_xe";
-            checkBox_trusk_xe.Size = new Size(92, 24);
+            checkBox_trusk_xe.Size = new Size(95, 24);
             checkBox_trusk_xe.TabIndex = 22;
-            checkBox_trusk_xe.Text = "TRUSK";
+            checkBox_trusk_xe.Text = "TRUCK";
             checkBox_trusk_xe.UseVisualStyleBackColor = true;
             // 
             // textBox_soghe_xe
@@ -235,12 +235,12 @@
             // radioButton_cu_xe
             // 
             radioButton_cu_xe.AutoSize = true;
-            radioButton_cu_xe.Location = new Point(359, 305);
+            radioButton_cu_xe.Location = new Point(404, 305);
             radioButton_cu_xe.Name = "radioButton_cu_xe";
-            radioButton_cu_xe.Size = new Size(70, 24);
+            radioButton_cu_xe.Size = new Size(73, 24);
             radioButton_cu_xe.TabIndex = 20;
             radioButton_cu_xe.TabStop = true;
-            radioButton_cu_xe.Text = "xe cũ";
+            radioButton_cu_xe.Text = "Xe cũ";
             radioButton_cu_xe.UseVisualStyleBackColor = true;
             // 
             // radioButton_moi_xe
@@ -248,10 +248,10 @@
             radioButton_moi_xe.AutoSize = true;
             radioButton_moi_xe.Location = new Point(225, 305);
             radioButton_moi_xe.Name = "radioButton_moi_xe";
-            radioButton_moi_xe.Size = new Size(82, 24);
+            radioButton_moi_xe.Size = new Size(85, 24);
             radioButton_moi_xe.TabIndex = 19;
             radioButton_moi_xe.TabStop = true;
-            radioButton_moi_xe.Text = "xe mới";
+            radioButton_moi_xe.Text = "Xe mới";
             radioButton_moi_xe.UseVisualStyleBackColor = true;
             // 
             // textBox_mausac_xe

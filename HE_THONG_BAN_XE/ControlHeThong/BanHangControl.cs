@@ -31,5 +31,10 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         {
 
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
