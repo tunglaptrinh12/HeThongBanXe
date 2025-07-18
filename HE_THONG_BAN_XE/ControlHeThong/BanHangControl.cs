@@ -16,5 +16,20 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         {
             InitializeComponent();
         }
+        public static class MaTuSinh
+        {
+            private static Random random = new Random();
+
+            public static string GenerateMaCTHD(int length = 8)
+            {
+                const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                return new string(Enumerable.Repeat(chars, length)
+                                  .Select(s => s[random.Next(s.Length)]).ToArray());
+            }
+        }
+        private void BanHangControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

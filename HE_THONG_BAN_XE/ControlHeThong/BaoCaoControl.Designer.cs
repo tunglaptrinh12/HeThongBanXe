@@ -28,8 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            SuspendLayout();
+            // 
+            // BaoCaoControl
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Name = "BaoCaoControl";
+            Size = new Size(1147, 721);
+            ResumeLayout(false);
         }
 
         #endregion
