@@ -43,10 +43,10 @@ namespace HE_THONG_BAN_XE.Connect
                 .WithMany()
                 .HasForeignKey(h => h.MaKM)
                 .HasConstraintName("FK_ChiTietHoaDon_KhuyenMai");
-            //KHÓA NGOẠI: ChiTietHoaDon -> KhachHang
+            //KHÓA NGOẠI:HoaDon -> KhachHang
             modelBuilder.Entity<HoaDon>()
-                .HasOne<KhachHang>()
-                .WithMany()
+                .HasOne(h => h.KhachHang)
+                .WithMany(k => k.HoaDons)
                 .HasForeignKey(h => h.MaKH)
                 .HasConstraintName("FK_HoaDon1_KhachHang");
             //khóa ngoại : ChiTietHoaDon -> HoaDon

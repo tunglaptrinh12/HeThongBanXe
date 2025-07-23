@@ -107,10 +107,10 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                 dataGridView_xe.Columns["TrangThai"].HeaderText = "Trạng Thái";
                 dataGridView_xe.Columns["TrangThai"].Width = 80;
             }
-            if (dataGridView_xe.Columns.Contains("HoaDons"))
+            if (dataGridView_xe.Columns.Contains("ChiTietHoaDons"))
             {
-                dataGridView_xe.Columns["HoaDons"].HeaderText = "Hóa Đơn";
-                dataGridView_xe.Columns["HoaDons"].Width = 80;
+                dataGridView_xe.Columns["ChiTietHoaDons"].HeaderText = "Hóa Đơn";
+                dataGridView_xe.Columns["ChiTietHoaDons"].Width = 80;
 
             }
         }

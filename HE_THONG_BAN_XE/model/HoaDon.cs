@@ -8,12 +8,14 @@ using System.Threading.Tasks;
 
 namespace HE_THONG_BAN_XE.model
 {
+    [Table("CSDL_HoaDon")]
     internal class HoaDon
     {
         [Key]
         [Required]
         public String? MaHD {  get; set; }
         [Required]
+        
         public String? MaKH { get; set; }
         [Required]
         public int? SoLuong { get; set; }

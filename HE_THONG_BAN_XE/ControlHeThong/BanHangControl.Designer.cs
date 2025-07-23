@@ -30,16 +30,18 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
-            dateTimePicker1 = new DateTimePicker();
-            label12 = new Label();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
-            label11 = new Label();
+            label_giatrikm_bh = new Label();
+            label3 = new Label();
+            dateTimePicker_ngaylaphd_bh = new DateTimePicker();
+            label_dongia_bh = new Label();
+            comboBox_makm_bh = new ComboBox();
+            comboBox_maxe_bh = new ComboBox();
+            comboBox_makh_bh = new ComboBox();
+            textBox_mahd_bh = new TextBox();
+            label_thanhtien_bh = new Label();
             label10 = new Label();
             label9 = new Label();
-            label3 = new Label();
+            label_macode_bh = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -47,16 +49,16 @@
             label4 = new Label();
             label2 = new Label();
             groupBox2 = new GroupBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            button_all_bh = new Button();
+            button_themxe_bh = new Button();
+            button_lammoi_bh = new Button();
+            button_chitiethoadon_bh = new Button();
+            button_timkiem_bh = new Button();
+            button_taohoadon_bh = new Button();
+            dataGridView_hoadon_bh = new DataGridView();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_hoadon_bh).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -72,16 +74,18 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dateTimePicker1);
-            groupBox1.Controls.Add(label12);
-            groupBox1.Controls.Add(comboBox3);
-            groupBox1.Controls.Add(comboBox2);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(label_giatrikm_bh);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(dateTimePicker_ngaylaphd_bh);
+            groupBox1.Controls.Add(label_dongia_bh);
+            groupBox1.Controls.Add(comboBox_makm_bh);
+            groupBox1.Controls.Add(comboBox_maxe_bh);
+            groupBox1.Controls.Add(comboBox_makh_bh);
+            groupBox1.Controls.Add(textBox_mahd_bh);
+            groupBox1.Controls.Add(label_thanhtien_bh);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label_macode_bh);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label6);
@@ -92,67 +96,83 @@
             groupBox1.ForeColor = Color.DarkBlue;
             groupBox1.Location = new Point(14, 38);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(744, 400);
+            groupBox1.Size = new Size(744, 432);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin hóa đơn";
             // 
-            // dateTimePicker1
+            // label_giatrikm_bh
             // 
-            dateTimePicker1.Location = new Point(164, 310);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(563, 28);
-            dateTimePicker1.TabIndex = 15;
+            label_giatrikm_bh.Location = new Point(176, 261);
+            label_giatrikm_bh.Name = "label_giatrikm_bh";
+            label_giatrikm_bh.Size = new Size(551, 25);
+            label_giatrikm_bh.TabIndex = 16;
             // 
-            // label12
+            // label3
             // 
-            label12.Location = new Point(164, 269);
-            label12.Name = "label12";
-            label12.Size = new Size(563, 28);
-            label12.TabIndex = 14;
+            label3.Location = new Point(7, 261);
+            label3.Name = "label3";
+            label3.Size = new Size(163, 25);
+            label3.TabIndex = 4;
+            label3.Text = "Giá trị khuyến mãi:";
+            label3.Click += label3_Click;
             // 
-            // comboBox3
+            // dateTimePicker_ngaylaphd_bh
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(164, 219);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(563, 28);
-            comboBox3.TabIndex = 13;
+            dateTimePicker_ngaylaphd_bh.Location = new Point(176, 340);
+            dateTimePicker_ngaylaphd_bh.Name = "dateTimePicker_ngaylaphd_bh";
+            dateTimePicker_ngaylaphd_bh.Size = new Size(551, 28);
+            dateTimePicker_ngaylaphd_bh.TabIndex = 15;
             // 
-            // comboBox2
+            // label_dongia_bh
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(164, 172);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(563, 28);
-            comboBox2.TabIndex = 12;
+            label_dongia_bh.Location = new Point(176, 299);
+            label_dongia_bh.Name = "label_dongia_bh";
+            label_dongia_bh.Size = new Size(551, 25);
+            label_dongia_bh.TabIndex = 14;
             // 
-            // comboBox1
+            // comboBox_makm_bh
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(164, 125);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(563, 28);
-            comboBox1.TabIndex = 11;
+            comboBox_makm_bh.FormattingEnabled = true;
+            comboBox_makm_bh.Location = new Point(176, 219);
+            comboBox_makm_bh.Name = "comboBox_makm_bh";
+            comboBox_makm_bh.Size = new Size(551, 28);
+            comboBox_makm_bh.TabIndex = 13;
             // 
-            // textBox1
+            // comboBox_maxe_bh
             // 
-            textBox1.Location = new Point(164, 78);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(563, 28);
-            textBox1.TabIndex = 10;
+            comboBox_maxe_bh.FormattingEnabled = true;
+            comboBox_maxe_bh.Location = new Point(176, 172);
+            comboBox_maxe_bh.Name = "comboBox_maxe_bh";
+            comboBox_maxe_bh.Size = new Size(551, 28);
+            comboBox_maxe_bh.TabIndex = 12;
             // 
-            // label11
+            // comboBox_makh_bh
             // 
-            label11.Location = new Point(164, 363);
-            label11.Name = "label11";
-            label11.Size = new Size(563, 28);
-            label11.TabIndex = 9;
+            comboBox_makh_bh.FormattingEnabled = true;
+            comboBox_makh_bh.Location = new Point(176, 125);
+            comboBox_makh_bh.Name = "comboBox_makh_bh";
+            comboBox_makh_bh.Size = new Size(551, 28);
+            comboBox_makh_bh.TabIndex = 11;
+            // 
+            // textBox_mahd_bh
+            // 
+            textBox_mahd_bh.Location = new Point(176, 78);
+            textBox_mahd_bh.Name = "textBox_mahd_bh";
+            textBox_mahd_bh.Size = new Size(551, 28);
+            textBox_mahd_bh.TabIndex = 10;
+            // 
+            // label_thanhtien_bh
+            // 
+            label_thanhtien_bh.Location = new Point(176, 393);
+            label_thanhtien_bh.Name = "label_thanhtien_bh";
+            label_thanhtien_bh.Size = new Size(551, 25);
+            label_thanhtien_bh.TabIndex = 9;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(7, 316);
+            label10.Location = new Point(19, 346);
             label10.Name = "label10";
             label10.Size = new Size(151, 20);
             label10.TabIndex = 8;
@@ -161,23 +181,23 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(60, 363);
+            label9.Location = new Point(72, 393);
             label9.Name = "label9";
             label9.Size = new Size(98, 20);
             label9.TabIndex = 7;
             label9.Text = "Thành tiền:";
             // 
-            // label3
+            // label_macode_bh
             // 
-            label3.Location = new Point(164, 35);
-            label3.Name = "label3";
-            label3.Size = new Size(563, 28);
-            label3.TabIndex = 1;
+            label_macode_bh.Location = new Point(176, 35);
+            label_macode_bh.Name = "label_macode_bh";
+            label_macode_bh.Size = new Size(551, 25);
+            label_macode_bh.TabIndex = 1;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(96, 175);
+            label8.Location = new Point(108, 175);
             label8.Name = "label8";
             label8.Size = new Size(62, 20);
             label8.TabIndex = 6;
@@ -186,7 +206,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(19, 128);
+            label7.Location = new Point(31, 128);
             label7.Name = "label7";
             label7.Size = new Size(139, 20);
             label7.TabIndex = 5;
@@ -196,7 +216,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(83, 269);
+            label6.Location = new Point(95, 299);
             label6.Name = "label6";
             label6.Size = new Size(75, 20);
             label6.TabIndex = 4;
@@ -205,7 +225,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(18, 222);
+            label5.Location = new Point(30, 222);
             label5.Name = "label5";
             label5.Size = new Size(140, 20);
             label5.TabIndex = 3;
@@ -215,7 +235,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.DarkBlue;
-            label4.Location = new Point(50, 81);
+            label4.Location = new Point(62, 81);
             label4.Name = "label4";
             label4.Size = new Size(108, 20);
             label4.TabIndex = 2;
@@ -224,7 +244,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(77, 35);
+            label2.Location = new Point(89, 35);
             label2.Name = "label2";
             label2.Size = new Size(81, 20);
             label2.TabIndex = 0;
@@ -232,91 +252,99 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(button6);
-            groupBox2.Controls.Add(button5);
-            groupBox2.Controls.Add(button4);
-            groupBox2.Controls.Add(button3);
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(button1);
+            groupBox2.Controls.Add(button_all_bh);
+            groupBox2.Controls.Add(button_themxe_bh);
+            groupBox2.Controls.Add(button_lammoi_bh);
+            groupBox2.Controls.Add(button_chitiethoadon_bh);
+            groupBox2.Controls.Add(button_timkiem_bh);
+            groupBox2.Controls.Add(button_taohoadon_bh);
             groupBox2.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold);
             groupBox2.ForeColor = Color.DarkBlue;
             groupBox2.Location = new Point(764, 38);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(370, 400);
+            groupBox2.Size = new Size(370, 432);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Điều Khiển";
             // 
-            // button3
+            // button_all_bh
             // 
-            button3.Location = new Point(33, 197);
-            button3.Name = "button3";
-            button3.Size = new Size(168, 45);
-            button3.TabIndex = 2;
-            button3.Text = "Chi tiết hóa đơn";
-            button3.UseVisualStyleBackColor = true;
+            button_all_bh.BackColor = Color.Tan;
+            button_all_bh.Location = new Point(18, 370);
+            button_all_bh.Name = "button_all_bh";
+            button_all_bh.Size = new Size(332, 54);
+            button_all_bh.TabIndex = 5;
+            button_all_bh.Text = "Tất Cả Hóa Đơn";
+            button_all_bh.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // button_themxe_bh
             // 
-            button2.Location = new Point(33, 125);
-            button2.Name = "button2";
-            button2.Size = new Size(125, 45);
-            button2.TabIndex = 1;
-            button2.Text = "Tìm Kiếm";
-            button2.UseVisualStyleBackColor = true;
+            button_themxe_bh.BackColor = Color.Tan;
+            button_themxe_bh.Location = new Point(18, 236);
+            button_themxe_bh.Name = "button_themxe_bh";
+            button_themxe_bh.Size = new Size(332, 54);
+            button_themxe_bh.TabIndex = 4;
+            button_themxe_bh.Text = "Thêm xe vào Hóa Đơn";
+            button_themxe_bh.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // button_lammoi_bh
             // 
-            button1.Location = new Point(33, 56);
-            button1.Name = "button1";
-            button1.Size = new Size(125, 45);
-            button1.TabIndex = 0;
-            button1.Text = "Tạo Hóa Đơn";
-            button1.UseVisualStyleBackColor = true;
+            button_lammoi_bh.BackColor = Color.Tan;
+            button_lammoi_bh.Location = new Point(18, 169);
+            button_lammoi_bh.Name = "button_lammoi_bh";
+            button_lammoi_bh.Size = new Size(332, 54);
+            button_lammoi_bh.TabIndex = 3;
+            button_lammoi_bh.Text = "Làm Mới";
+            button_lammoi_bh.UseVisualStyleBackColor = false;
+            button_lammoi_bh.Click += button_lammoi_bh_Click;
             // 
-            // dataGridView1
+            // button_chitiethoadon_bh
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 444);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1120, 264);
-            dataGridView1.TabIndex = 3;
+            button_chitiethoadon_bh.BackColor = Color.Tan;
+            button_chitiethoadon_bh.Location = new Point(18, 303);
+            button_chitiethoadon_bh.Name = "button_chitiethoadon_bh";
+            button_chitiethoadon_bh.Size = new Size(332, 54);
+            button_chitiethoadon_bh.TabIndex = 2;
+            button_chitiethoadon_bh.Text = "Chi tiết hóa đơn";
+            button_chitiethoadon_bh.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // button_timkiem_bh
             // 
-            button4.Location = new Point(219, 133);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 29);
-            button4.TabIndex = 3;
-            button4.Text = "Làm Mới";
-            button4.UseVisualStyleBackColor = true;
+            button_timkiem_bh.BackColor = Color.Tan;
+            button_timkiem_bh.Location = new Point(18, 102);
+            button_timkiem_bh.Name = "button_timkiem_bh";
+            button_timkiem_bh.Size = new Size(332, 54);
+            button_timkiem_bh.TabIndex = 1;
+            button_timkiem_bh.Text = "Tìm Kiếm";
+            button_timkiem_bh.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // button_taohoadon_bh
             // 
-            button5.Location = new Point(196, 56);
-            button5.Name = "button5";
-            button5.Size = new Size(94, 38);
-            button5.TabIndex = 4;
-            button5.Text = "Thêm xe vào Hóa Đơn";
-            button5.UseVisualStyleBackColor = true;
+            button_taohoadon_bh.BackColor = Color.Tan;
+            button_taohoadon_bh.Location = new Point(18, 35);
+            button_taohoadon_bh.Name = "button_taohoadon_bh";
+            button_taohoadon_bh.Size = new Size(332, 54);
+            button_taohoadon_bh.TabIndex = 0;
+            button_taohoadon_bh.Text = "Tạo Hóa Đơn";
+            button_taohoadon_bh.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // dataGridView_hoadon_bh
             // 
-            button6.Location = new Point(105, 287);
-            button6.Name = "button6";
-            button6.Size = new Size(94, 29);
-            button6.TabIndex = 5;
-            button6.Text = "Xuất Hóa Đơn ";
-            button6.UseVisualStyleBackColor = true;
+            dataGridView_hoadon_bh.BackgroundColor = Color.FloralWhite;
+            dataGridView_hoadon_bh.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_hoadon_bh.Location = new Point(14, 476);
+            dataGridView_hoadon_bh.Name = "dataGridView_hoadon_bh";
+            dataGridView_hoadon_bh.RowHeadersVisible = false;
+            dataGridView_hoadon_bh.RowHeadersWidth = 51;
+            dataGridView_hoadon_bh.Size = new Size(1120, 229);
+            dataGridView_hoadon_bh.TabIndex = 3;
             // 
             // BanHangControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SkyBlue;
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridView_hoadon_bh);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label1);
@@ -326,7 +354,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_hoadon_bh).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -340,24 +368,26 @@
         private Label label6;
         private Label label5;
         private Label label4;
-        private Label label3;
+        private Label label_macode_bh;
         private Label label8;
         private Label label10;
         private Label label9;
-        private TextBox textBox1;
-        private Label label11;
-        private DateTimePicker dateTimePicker1;
-        private Label label12;
-        private ComboBox comboBox3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private TextBox textBox_mahd_bh;
+        private Label label_thanhtien_bh;
+        private DateTimePicker dateTimePicker_ngaylaphd_bh;
+        private Label label_dongia_bh;
+        private ComboBox comboBox_makm_bh;
+        private ComboBox comboBox_maxe_bh;
+        private ComboBox comboBox_makh_bh;
         private GroupBox groupBox2;
-        private Button button2;
-        private Button button1;
-        private Button button3;
-        private DataGridView dataGridView1;
-        private Button button5;
-        private Button button4;
-        private Button button6;
+        private Button button_timkiem_bh;
+        private Button button_taohoadon_bh;
+        private Button button_chitiethoadon_bh;
+        private Button button_themxe_bh;
+        private Button button_lammoi_bh;
+        private DataGridView dataGridView_hoadon_bh;
+        private Button button_all_bh;
+        private Label label3;
+        private Label label_giatrikm_bh;
     }
 }
