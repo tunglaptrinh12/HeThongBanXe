@@ -277,6 +277,7 @@
             button_all_bh.TabIndex = 5;
             button_all_bh.Text = "Tất Cả Hóa Đơn";
             button_all_bh.UseVisualStyleBackColor = false;
+            button_all_bh.Click += button_all_bh_Click;
             // 
             // button_themxe_bh
             // 
@@ -309,6 +310,7 @@
             button_chitiethoadon_bh.TabIndex = 2;
             button_chitiethoadon_bh.Text = "Chi tiết hóa đơn";
             button_chitiethoadon_bh.UseVisualStyleBackColor = false;
+            button_chitiethoadon_bh.Click += button_chitiethoadon_bh_Click;
             // 
             // button_timkiem_bh
             // 
@@ -319,6 +321,7 @@
             button_timkiem_bh.TabIndex = 1;
             button_timkiem_bh.Text = "Tìm Kiếm";
             button_timkiem_bh.UseVisualStyleBackColor = false;
+            button_timkiem_bh.Click += button_timkiem_bh_Click;
             // 
             // button_taohoadon_bh
             // 

@@ -265,37 +265,30 @@ namespace HE_THONG_BAN_XE.ControlHeThong
             if (dataGridView_hoadon_bh.Columns.Contains("MaHD"))
             {
                 dataGridView_hoadon_bh.Columns["MaHD"].HeaderText = "Mã Hóa Đơn";
-                dataGridView_hoadon_bh.Columns["MaHD"].Width = 60;
             }
             if (dataGridView_hoadon_bh.Columns.Contains("MaKH"))
             {
                 dataGridView_hoadon_bh.Columns["MaKH"].HeaderText = "Mã Khách Hàng";
-                dataGridView_hoadon_bh.Columns["MaHD"].Width = 60;
             }
             if (dataGridView_hoadon_bh.Columns.Contains("SoLuong"))
             {
                 dataGridView_hoadon_bh.Columns["SoLuong"].HeaderText = "Số Lượng";
-                dataGridView_hoadon_bh.Columns["MaHD"].Width = 80;
             }
             if (dataGridView_hoadon_bh.Columns.Contains("NgayLapHD"))
             {
                 dataGridView_hoadon_bh.Columns["NgayLapHD"].HeaderText = "Ngày Lập Hóa Đơn";
-                dataGridView_hoadon_bh.Columns["MaHD"].Width = 150;
             }
             if (dataGridView_hoadon_bh.Columns.Contains("ThanhTien"))
             {
                 dataGridView_hoadon_bh.Columns["ThanhTien"].HeaderText = "Thành Tiền";
-                dataGridView_hoadon_bh.Columns["MaHD"].Width = 120;
             }
             if (dataGridView_hoadon_bh.Columns.Contains("KhachHang"))
             {
                 dataGridView_hoadon_bh.Columns["KhachHang"].HeaderText = "Khách Hàng";
-                dataGridView_hoadon_bh.Columns["MaHD"].Width = 160;
             }
             if (dataGridView_hoadon_bh.Columns.Contains("ChiTietHoaDons"))
             {
                 dataGridView_hoadon_bh.Columns["ChiTietHoaDons"].HeaderText = "Chi Tiết Hóa Đơn";
-                dataGridView_hoadon_bh.Columns["MaHD"].Width = 160;
             }
         }
         private void BanHangControl_Load(object sender, EventArgs e)
@@ -519,7 +512,58 @@ namespace HE_THONG_BAN_XE.ControlHeThong
 
         private void dataGridView_hoadon_bh_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+        }
+
+        private void button_all_bh_Click(object sender, EventArgs e)
+        {
+            LoadHoaDon();
+        }
+
+        private void button_chitiethoadon_bh_Click(object sender, EventArgs e)
+        {
+            ChiTietHoaDonForm chiTietHoaDonForm = new ChiTietHoaDonForm();
+            chiTietHoaDonForm.ShowDialog();
+        }
+
+        private void button_timkiem_bh_Click(object sender, EventArgs e)
+        {
+            string maHD = textBox_mahd_bh.Text.Trim();
+
+            if (string.IsNullOrEmpty(maHD))
+            {
+                MessageBox.Show("Vui lòng nhập mã hóa đơn cần tìm.");
+                return;
+            }
+
+            using (var db = new DBNhanVien())
+            {
+                // Tìm hóa đơn theo mã
+                var hoaDon = db.hoaDons
+                    .Include(hd => hd.KhachHang)
+                    .Include(hd => hd.ChiTietHoaDons)
+                    .FirstOrDefault(hd => hd.MaHD == maHD);
+
+                if (hoaDon == null)
+                {
+                    MessageBox.Show("Không tìm thấy hóa đơn.");
+                    return;
+                }
+
+                // Hiển thị lên DataGridView
+                var ketQua = hoaDon.ChiTietHoaDons.Select(cthd => new
+                {
+                    MaCTHD = cthd.MaCTHD,
+                    MaHD = cthd.MaHD,
+                    MaXe = cthd.MaXe,
+                    DonGia = cthd.DonGia,
+                    KhuyenMai = cthd.GiaTriKhuyenMai,
+                    ThanhTien = cthd.ThanhTien,
+                    NgayLap = cthd.NgayLayHD
+                }).ToList();
+
+                dataGridView_hoadon_bh.DataSource = ketQua;
+            }
         }
     }
 }
