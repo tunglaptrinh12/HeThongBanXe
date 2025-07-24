@@ -101,7 +101,7 @@
             radioButton_QuanLy.TabStop = true;
             radioButton_QuanLy.Text = "Quản Lý";
             radioButton_QuanLy.UseVisualStyleBackColor = true;
-            //radioButton_QuanLy.CheckedChanged += radioButton_QuanLy_CheckedChanged;
+            radioButton_QuanLy.CheckedChanged += radioButton_QuanLy_CheckedChanged;
             // 
             // radioButton_NhanVien
             // 
