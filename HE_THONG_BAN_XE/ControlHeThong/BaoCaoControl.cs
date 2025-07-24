@@ -38,11 +38,45 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         }
         private void LoadBaoCao()
         {
+            //using (var Context = new DBNhanVien())
+            //{
+            //    var list = Context.hoaDons.ToList();
+            //    dgvXeBan.DataSource = list;
+            //    FormatDataGridView();
+            //}
             using (var Context = new DBNhanVien())
             {
-                var list = Context.hoaDons.ToList();
-                dgvXeBan.DataSource = list;
+               
+                 FormatDataGridView();
+                DateTime ngayChon = DateTime.Now.Date; // Giá trị mặc định là ngày hiện tại
+
+                var danhSachXeBan = from ct in Context.chiTietHoaDons
+                                    join hd in Context.hoaDons on ct.MaHD equals hd.MaHD
+                                    join xe in Context.xes on ct.MaXe equals xe.MaXe
+                                    join kh in Context.khachHangs on ct.MaKH equals kh.MaKH
+                                    where hd.NgaylapHD.HasValue && hd.NgaylapHD.Value.Date == ngayChon
+                                    select new
+                                    {
+                                        ct.MaCTHD,
+                                        hd.MaHD,
+                                        TenKhachHang = kh.TenKH,
+                                        TenXe = xe.TenXe,
+                                        ct.DonGia,
+                                        ct.ThanhTien,
+                                        NgayLap = hd.NgaylapHD.Value
+                                    };
+
+                dgvXeBan.DataSource = danhSachXeBan.ToList();
                 FormatDataGridView();
+
+                // Đặt tiêu đề cột giống như khi bấm "Tạo báo cáo"
+                dgvXeBan.Columns["MaCTHD"].HeaderText = "Mã chi tiết HĐ";
+                dgvXeBan.Columns["MaHD"].HeaderText = "Mã hóa đơn";
+                dgvXeBan.Columns["TenKhachHang"].HeaderText = "Tên khách hàng";
+                dgvXeBan.Columns["TenXe"].HeaderText = "Tên xe";
+                dgvXeBan.Columns["DonGia"].HeaderText = "Đơn giá";
+                dgvXeBan.Columns["ThanhTien"].HeaderText = "Thành tiền";
+                dgvXeBan.Columns["NgayLap"].HeaderText = "Ngày lập";
             }
         }
         private void FormatDataGridView()
@@ -131,6 +165,13 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                                     };
 
                 dgvXeBan.DataSource = danhSachXeBan.ToList();
+                dgvXeBan.Columns["MaCTHD"].HeaderText = "Mã chi tiết HĐ";
+                dgvXeBan.Columns["MaHD"].HeaderText = "Mã hóa đơn";
+                dgvXeBan.Columns["TenKhachHang"].HeaderText = "Tên khách hàng";
+                dgvXeBan.Columns["TenXe"].HeaderText = "Tên xe";
+                dgvXeBan.Columns["DonGia"].HeaderText = "Đơn giá";
+                dgvXeBan.Columns["ThanhTien"].HeaderText = "Thành tiền";
+                dgvXeBan.Columns["NgayLap"].HeaderText = "Ngày lập";
             }
 
         }
