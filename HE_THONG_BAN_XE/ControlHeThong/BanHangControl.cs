@@ -4,6 +4,7 @@ using HE_THONG_BAN_XE.model;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace HE_THONG_BAN_XE.ControlHeThong
 {
@@ -187,7 +188,9 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                     }
 
                     comboBox_makm_bh.SelectedValue = kmApDung.MaKM;
-                    label_giatrikm_bh.Text = $"{kmApDung.GiaTriKM:N0} {(kmApDung.LoaiKM == "phần trăm" ? "%" : "VND")}";
+                    label_giatrikm_bh.Text = kmApDung.LoaiKM.ToLower().Contains("phần trăm")
+                        ? $"{kmApDung.GiaTriKM}%"
+                        : $"{kmApDung.GiaTriKM:N0} VND";
                 }
                 else
                 {
@@ -239,9 +242,23 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         private void LoadHoaDon()
         {
 
-            using (var Context = new DBNhanVien())
+            using (var context = new DBNhanVien())
             {
-                var list = Context.hoaDons.ToList();
+                var list = context.hoaDons
+                    .Include(h => h.KhachHang)
+                    .Include(h => h.ChiTietHoaDons)
+                    .Select(h => new
+                    {
+                        MaHD = h.MaHD,
+                        MaKH = h.MaKH,
+                        SoLuong = h.SoLuong,
+                        NgayLapHD = h.NgaylapHD,
+                        ThanhTien = h.ThanhTien,
+                        KhachHang = h.KhachHang != null ? h.KhachHang.TenKH : "",
+                        ChiTietHoaDon = string.Join(", ", h.ChiTietHoaDons.Select(ct => ct.MaCTHD))
+                    })
+                    .ToList();
+
                 dataGridView_hoadon_bh.DataSource = list;
                 FormatDataGridView();
             }
@@ -357,26 +374,24 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                     MessageBox.Show("Vui lòng chọn xe cần bán.");
                     return;
                 }
-
                 if (danhSachXeTrongHD.Count == 0)
                 {
                     MessageBox.Show("Vui lòng chọn ít nhất một xe.");
                     return;
                 }
 
-                // Tạo mã hóa đơn ngẫu nhiên
+                // Tạo mã hóa đơn và mã chi tiết hóa đơn
                 string maCTHD = MaTuSinh.GenerateMaCTHD();
                 label_macode_bh.Text = maCTHD;
 
                 // Lấy thông tin cơ bản
-                string maKH = comboBox_makh_bh.SelectedValue.ToString(); // Đúng: lấy MaKH
+                string maKH = comboBox_makh_bh.SelectedValue.ToString();
                 DateTime ngayLap = dateTimePicker_ngaylaphd_bh.Value;
                 string maHD = textBox_mahd_bh.Text;
 
                 decimal tongTien = danhSachXeTrongHD.Sum(x => x.DonGia);
                 int soLuongXe = danhSachXeTrongHD.Count;
 
-                // Đếm số lần đã mua của khách hàng
                 int soLanMua = db.hoaDons.Count(hd => hd.MaKH == maKH);
 
                 // Xác định khuyến mãi phù hợp
@@ -386,7 +401,26 @@ namespace HE_THONG_BAN_XE.ControlHeThong
 
                 decimal tongGiaTriKhuyenMai = 0;
 
-                // Tạo từng chi tiết hóa đơn
+                // Lấy thông tin khách hàng
+                var khachHang = db.khachHangs.FirstOrDefault(kh => kh.MaKH == maKH);
+                if (khachHang == null)
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng.");
+                    return;
+                }
+
+                // Tạo hóa đơn trước và thêm chi tiết sau
+                var hoaDon = new HoaDon
+                {
+                    MaHD = maHD,
+                    MaKH = maKH,
+                    SoLuong = soLuongXe,
+                    NgaylapHD = ngayLap,
+                    ThanhTien = 0, // sẽ tính sau khi thêm chi tiết
+                    KhachHang = khachHang,
+                    ChiTietHoaDons = new List<ChiTietHoaDon>()
+                };
+
                 foreach (var xe in danhSachXeTrongHD)
                 {
                     decimal donGia = xe.DonGia;
@@ -410,7 +444,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
 
                     var cthd = new ChiTietHoaDon
                     {
-                        MaCTHD = maCTHD,
+                        MaCTHD = MaTuSinh.GenerateMaCTHD(),
                         MaHD = maHD,
                         MaKH = maKH,
                         MaXe = xe.MaXe,
@@ -421,31 +455,13 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                         ThanhTien = thanhTien
                     };
 
-                    db.chiTietHoaDons.Add(cthd);
+                    hoaDon.ChiTietHoaDons.Add(cthd);  // Gán chi tiết vào hóa đơn
+                    //db.chiTietHoaDons.Add(cthd);      // Và thêm riêng để lưu
                 }
 
-                // Lấy đối tượng khách hàng
-                var khachHang = db.khachHangs.FirstOrDefault(kh => kh.MaKH == maKH);
-                if (khachHang == null)
-                {
-                    MessageBox.Show("Không tìm thấy khách hàng.");
-                    return;
-                }
-
-                // Tạo hóa đơn
-                var hoaDon = new HoaDon
-                {
-                    MaHD = maHD,
-                    MaKH = maKH,
-                    SoLuong = soLuongXe,
-                    NgaylapHD = ngayLap,
-                    ThanhTien = tongTien - tongGiaTriKhuyenMai,
-                    KhachHang = khachHang,
-                    //ChiTietHoaDons = maCTHD
-                };
+                hoaDon.ThanhTien = tongTien - tongGiaTriKhuyenMai;
 
                 db.hoaDons.Add(hoaDon);
-
                 db.SaveChanges();
 
                 MessageBox.Show("Tạo hóa đơn thành công!");
@@ -499,6 +515,11 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                     label_dongia_bh.Text = xe.GiaBan.ToString("N0") + " VND";
                 }
             }
+        }
+
+        private void dataGridView_hoadon_bh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

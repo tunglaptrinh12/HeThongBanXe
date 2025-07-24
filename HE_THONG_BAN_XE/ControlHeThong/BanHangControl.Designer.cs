@@ -341,6 +341,7 @@
             dataGridView_hoadon_bh.RowHeadersWidth = 51;
             dataGridView_hoadon_bh.Size = new Size(1120, 229);
             dataGridView_hoadon_bh.TabIndex = 3;
+            dataGridView_hoadon_bh.CellContentClick += dataGridView_hoadon_bh_CellContentClick;
             // 
             // BanHangControl
             // 

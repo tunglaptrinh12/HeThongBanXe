@@ -25,7 +25,7 @@ namespace HE_THONG_BAN_XE.model
         public decimal ThanhTien { get; set; }
 
         [ForeignKey("MaKH")]
-        public virtual KhachHang? KhachHang { get; set; }
+        public virtual KhachHang KhachHang { get; set; }
         public virtual ICollection<ChiTietHoaDon>? ChiTietHoaDons { get; set; }
 
     }
