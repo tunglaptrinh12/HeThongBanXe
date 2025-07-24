@@ -2,10 +2,14 @@
 using DocumentFormat.OpenXml.Presentation;
 using DocumentFormat.OpenXml.Spreadsheet;
 using HE_THONG_BAN_XE.Connect;
+using iText.IO.Font;
+using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
+using iText.IO.Image;
+using iText.IO.Font.Constants;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -32,10 +36,32 @@ namespace HE_THONG_BAN_XE.ControlHeThong
             InitializeComponent();
 
         }
+        private void LoadBaoCao()
+        {
+            using (var Context = new DBNhanVien())
+            {
+                var list = Context.hoaDons.ToList();
+                dgvXeBan.DataSource = list;
+                FormatDataGridView();
+            }
+        }
+        private void FormatDataGridView()
+        {
+            dgvXeBan.EnableHeadersVisualStyles = false;
 
+            dgvXeBan.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.Navy;
+            dgvXeBan.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            dgvXeBan.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Bold);
+
+            dgvXeBan.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10);
+            dgvXeBan.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dgvXeBan.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+
+            dgvXeBan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
         private void BaoCaoControl_Load(object sender, EventArgs e)
         {
-
+            LoadBaoCao();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -64,30 +90,30 @@ namespace HE_THONG_BAN_XE.ControlHeThong
 
             using (var db = new DBNhanVien())
             {
-                // ✅ DOANH THU TRONG NGÀY
+                //DOANH THU TRONG NGÀY
                 var doanhThu = db.hoaDons
                     .Where(hd => hd.NgaylapHD.HasValue && hd.NgaylapHD.Value.Date == ngayChon)
                     .Sum(hd => (decimal?)hd.ThanhTien) ?? 0;
                 lblDoanhThu.Text = doanhThu.ToString("N0") + " VNĐ";
 
-                // ✅ TỔNG XE ĐÃ BÁN TRONG NGÀY (theo chi tiết hóa đơn)
+                //TỔNG XE ĐÃ BÁN TRONG NGÀY (theo chi tiết hóa đơn)
                 var xeBan = (from ct in db.chiTietHoaDons
                              join hd in db.hoaDons on ct.MaHD equals hd.MaHD
                              where hd.NgaylapHD.HasValue && hd.NgaylapHD.Value.Date == ngayChon
                              select ct).Count();
                 lblXeBan.Text = xeBan.ToString();
 
-                // ✅ TỔNG KHÁCH HÀNG
+                //TỔNG KHÁCH HÀNG
                 lblKhachHang.Text = db.khachHangs.Count().ToString();
 
-                // ✅ TỒN KHO (Tổng số lượng xe còn lại)
+                //TỒN KHO (Tổng số lượng xe còn lại)
                 var tonKho = db.xes.Sum(x => (int?)x.SoChoNgoi) ?? 0;
                 lblTonKho.Text = tonKho.ToString();
 
-                // ✅ TỔNG NHÂN VIÊN
+                //TỔNG NHÂN VIÊN
                 lblNhanVien.Text = db.nhanViens.Count().ToString();
 
-                // ✅ DỮ LIỆU XE ĐÃ BÁN TRONG NGÀY (dgvXeBan)
+                //DỮ LIỆU XE ĐÃ BÁN TRONG NGÀY (dgvXeBan)
                 var danhSachXeBan = from ct in db.chiTietHoaDons
                                     join hd in db.hoaDons on ct.MaHD equals hd.MaHD
                                     join xe in db.xes on ct.MaXe equals xe.MaXe
@@ -109,7 +135,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
 
         }
 
-       
+
 
         private void btnXuatBaoCao_Click(object sender, EventArgs e)
         {
@@ -120,6 +146,12 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                 using (PdfDocument pdf = new PdfDocument(writer))
                 {
                     Document doc = new Document(pdf);
+
+                    // Load font Unicode (Arial)
+                    string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
+                    PdfFont font = PdfFontFactory.CreateFont(fontPath, PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
+                    doc.SetFont(font);
+
 
                     // Title
                     Paragraph title = new Paragraph("BÁO CÁO BÁN HÀNG")
@@ -173,7 +205,18 @@ namespace HE_THONG_BAN_XE.ControlHeThong
             MessageBox.Show("Xuất báo cáo thành công!\nFile lưu tại: " + Path.GetFullPath(filePath),
                             "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void dgvXeBan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-    
+
 }
+
 

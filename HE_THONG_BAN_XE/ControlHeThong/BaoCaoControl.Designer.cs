@@ -246,6 +246,7 @@
             dgvXeBan.RowHeadersWidth = 51;
             dgvXeBan.Size = new Size(838, 446);
             dgvXeBan.TabIndex = 10;
+            dgvXeBan.CellContentClick += dgvXeBan_CellContentClick;
             // 
             // label8
             // 
@@ -256,6 +257,7 @@
             label8.Size = new Size(480, 33);
             label8.TabIndex = 11;
             label8.Text = "Bảng báo cáo số lượng xe bán trong ngày ";
+            label8.Click += label8_Click;
             // 
             // btnTaoBaoCao
             // 
