@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace HE_THONG_BAN_XE.ControlHeThong
 {
@@ -15,9 +16,25 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         public BaoCaoControl()
         {
             InitializeComponent();
+
         }
 
         private void BaoCaoControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
