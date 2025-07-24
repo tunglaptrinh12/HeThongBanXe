@@ -29,21 +29,23 @@ namespace HE_THONG_BAN_XE.model
         [Required, StringLength(50)]
         public String? MaKM { get; set; }
         [Required]
-        public decimal? DonGia { get; set; }
+        public decimal DonGia { get; set; }
+        public decimal GiaTriKhuyenMai { get; set; }
         [Required]
         public DateTime NgayLayHD { get; set; }
 
-        public Decimal ThanhTien { get; set; }
+        public decimal ThanhTien { get; set; }
 
-        // Khóa ngoại
         [ForeignKey("MaHD")]
         public virtual HoaDon? HoaDon { get; set; }
+
         [ForeignKey("MaKH")]
-        public virtual KhachHang? KhachHang { get; set; } // Mối quan hệ với bảng KhachHang, mỗi hóa đơn thuộc về một khách hàng
+        public virtual KhachHang? KhachHang { get; set; }
 
         [ForeignKey("MaXe")]
-        public virtual Xe? Xe { get; set; } // Mối quan hệ với bảng Xe, mỗi hóa đơn liên quan đến một xe cụ thể
+        public virtual Xe? Xe { get; set; }
+
         [ForeignKey("MaKM")]
-        public virtual KhuyenMai? KhuyenMais { get; set; } // Mối quan hệ với bảng khuyén mại, mỗi hóa đơn liên quan tới khuyến mại 
+        public virtual KhuyenMai? KhuyenMai { get; set; }
     }
 }

@@ -146,6 +146,7 @@
             comboBox_maxe_bh.Name = "comboBox_maxe_bh";
             comboBox_maxe_bh.Size = new Size(551, 28);
             comboBox_maxe_bh.TabIndex = 12;
+            comboBox_maxe_bh.SelectedIndexChanged += comboBox_maxe_bh_SelectedIndexChanged;
             // 
             // comboBox_makh_bh
             // 
@@ -286,6 +287,7 @@
             button_themxe_bh.TabIndex = 4;
             button_themxe_bh.Text = "Thêm xe vào Hóa Đơn";
             button_themxe_bh.UseVisualStyleBackColor = false;
+            button_themxe_bh.Click += button_themxe_bh_Click;
             // 
             // button_lammoi_bh
             // 
@@ -327,6 +329,7 @@
             button_taohoadon_bh.TabIndex = 0;
             button_taohoadon_bh.Text = "Tạo Hóa Đơn";
             button_taohoadon_bh.UseVisualStyleBackColor = false;
+            button_taohoadon_bh.Click += button_taohoadon_bh_Click;
             // 
             // dataGridView_hoadon_bh
             // 

@@ -23,39 +23,40 @@ namespace HE_THONG_BAN_XE.Connect
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // KHÓA NGOẠI: ChiTietHoaDon → KhachHang
-            modelBuilder.Entity<ChiTietHoaDon>()
-                .HasOne<KhachHang>()
-                .WithMany()
-                .HasForeignKey(h => h.MaKH)
-                .HasConstraintName("FK_ChiTietHoaDon_KhachHang");
-
-            // KHÓA NGOẠI: ChiTietHoaDon → Xe
-            modelBuilder.Entity<ChiTietHoaDon>()
-                .HasOne<Xe>()
-                .WithMany()
-                .HasForeignKey(h => h.MaXe)
-                .HasConstraintName("FK_ChiTietHoaDon_Xe");
-
-            //KHÓA NGOẠI: ChiTietHoaDon -> KhuyenMai
-            modelBuilder.Entity<ChiTietHoaDon>()
-                .HasOne<KhuyenMai>()
-                .WithMany()
-                .HasForeignKey(h => h.MaKM)
-                .HasConstraintName("FK_ChiTietHoaDon_KhuyenMai");
-            //KHÓA NGOẠI:HoaDon -> KhachHang
+            // KHÁCH HÀNG - HÓA ĐƠN
             modelBuilder.Entity<HoaDon>()
                 .HasOne(h => h.KhachHang)
                 .WithMany(k => k.HoaDons)
                 .HasForeignKey(h => h.MaKH)
-                .HasConstraintName("FK_HoaDon1_KhachHang");
-            //khóa ngoại : ChiTietHoaDon -> HoaDon
+                .HasConstraintName("FK_HoaDon_KhachHang");
+
+            // KHÁCH HÀNG - CHI TIẾT HÓA ĐƠN
             modelBuilder.Entity<ChiTietHoaDon>()
-                .HasOne<HoaDon>()
+                .HasOne(ct => ct.KhachHang)
+                .WithMany(kh => kh.ChiTietHoaDons)
+                .HasForeignKey(ct => ct.MaKH)
+                .HasConstraintName("FK_ChiTietHoaDon_KhachHang");
+
+            // XE - CHI TIẾT HÓA ĐƠN
+            modelBuilder.Entity<ChiTietHoaDon>()
+                .HasOne(ct => ct.Xe)
+                .WithMany(xe => xe.ChiTietHoaDons)
+                .HasForeignKey(ct => ct.MaXe)
+                .HasConstraintName("FK_ChiTietHoaDon_Xe");
+
+            // KHUYẾN MÃI - CHI TIẾT HÓA ĐƠN
+            modelBuilder.Entity<ChiTietHoaDon>()
+                .HasOne(ct => ct.KhuyenMai)
                 .WithMany()
-                .HasForeignKey(h => h.MaHD)
+                .HasForeignKey(ct => ct.MaKM)
+                .HasConstraintName("FK_ChiTietHoaDon_KhuyenMai");
+
+            // HÓA ĐƠN - CHI TIẾT HÓA ĐƠN
+            modelBuilder.Entity<ChiTietHoaDon>()
+                .HasOne(ct => ct.HoaDon)
+                .WithMany(hd => hd.ChiTietHoaDons)
+                .HasForeignKey(ct => ct.MaHD)
                 .HasConstraintName("FK_ChiTietHoaDon_HoaDon");
         }
-
     }
 }

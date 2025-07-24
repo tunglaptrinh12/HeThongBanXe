@@ -22,7 +22,7 @@ namespace HE_THONG_BAN_XE.model
         [Required]
         public DateTime? NgaylapHD { get; set; }
         [Required]
-        public decimal? ThanhTien { get; set; }
+        public decimal ThanhTien { get; set; }
 
         [ForeignKey("MaKH")]
         public virtual KhachHang? KhachHang { get; set; }

@@ -32,7 +32,7 @@ namespace HE_THONG_BAN_XE.model
         [Required, StringLength(10)]
         public String? MoiCu { get; set; } 
         [Required]
-        public Decimal GiaBan { get; set; }
+        public decimal GiaBan { get; set; }
         [Required, StringLength(20)]
         public String? TrangThai { get; set; }
         public virtual ICollection<ChiTietHoaDon>? ChiTietHoaDons { get; set; } // Mối quan hệ với bảng HoaDon, mỗi xe có thể có nhiều hóa đơn liên quan
