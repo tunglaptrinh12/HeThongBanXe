@@ -19,6 +19,19 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         {
             InitializeComponent();
         }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void ClearForm()
         {
             textBox_manv_nhanvien.Clear();
@@ -135,6 +148,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         {
             using (var context = new DBNhanVien())
             {
+
                 // không để trống tên mã số điện thoại nhân viên
                 if (string.IsNullOrWhiteSpace(textBox_manv_nhanvien.Text) ||
                     string.IsNullOrWhiteSpace(textBox_tennv_nhanvien.Text) ||
@@ -145,6 +159,16 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                     ClearForm();
                     return;
                 }
+                string email = textBox_email_nhanvien.Text.Trim();
+
+                if (!string.IsNullOrEmpty(email) && !IsValidEmail(email))
+                {
+                    MessageBox.Show("Email không đúng định dạng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox_email_nhanvien.Focus();
+                    return;
+                }
+
+               
                 string maNV = textBox_manv_nhanvien.Text.Trim();
                 // kiểm tra nhân viên tồn tại chưa
                 bool maNVExists = context.nhanViens.Any(nv => nv.MaNV == maNV);
@@ -295,6 +319,11 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         }
 
         private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_email_nhanvien_TextChanged(object sender, EventArgs e)
         {
 
         }

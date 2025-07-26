@@ -256,6 +256,7 @@
             textBox_email_nhanvien.Name = "textBox_email_nhanvien";
             textBox_email_nhanvien.Size = new Size(505, 28);
             textBox_email_nhanvien.TabIndex = 10;
+            textBox_email_nhanvien.TextChanged += textBox_email_nhanvien_TextChanged;
             // 
             // textBox_tennv_nhanvien
             // 

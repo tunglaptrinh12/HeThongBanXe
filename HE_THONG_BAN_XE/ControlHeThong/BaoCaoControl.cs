@@ -141,7 +141,7 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                 lblKhachHang.Text = db.khachHangs.Count().ToString();
 
                 //TỒN KHO (Tổng số lượng xe còn lại)
-                var tonKho = db.xes.Sum(x => (int?)x.SoChoNgoi) ?? 0;
+                var tonKho = db.xes.Count(x => x.TrangThai=="chưa bán");
                 lblTonKho.Text = tonKho.ToString();
 
                 //TỔNG NHÂN VIÊN

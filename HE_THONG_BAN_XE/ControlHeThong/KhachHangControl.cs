@@ -18,6 +18,18 @@ namespace HE_THONG_BAN_XE.ControlHeThong
         {
             InitializeComponent();
         }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         private void ClearForm()
         {
             textBox_maKh_khachhang.Clear();
@@ -128,6 +140,14 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                     MessageBox.Show("Vui lòng nhập mã,tên,số điện thoại khách hàng!", "thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ClearForm();
+                    return;
+                }
+                string email = textBox_email_khachhang.Text.Trim();
+
+                if (!string.IsNullOrEmpty(email) && !IsValidEmail(email))
+                {
+                    MessageBox.Show("Email không đúng định dạng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox_email_khachhang.Focus();
                     return;
                 }
                 string maKH = textBox_maKh_khachhang.Text.Trim();

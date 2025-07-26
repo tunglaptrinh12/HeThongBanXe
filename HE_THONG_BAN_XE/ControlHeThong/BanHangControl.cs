@@ -434,6 +434,12 @@ namespace HE_THONG_BAN_XE.ControlHeThong
                         thanhTien -= giaTriKhuyenMai;
                         tongGiaTriKhuyenMai += giaTriKhuyenMai;
                     }
+                    var xeTrongDb = db.xes.FirstOrDefault(x => x.MaXe == xe.MaXe);
+                    if (xeTrongDb != null)
+                    {
+                        xeTrongDb.TrangThai = "đã bán";
+                        db.Entry(xeTrongDb).State = EntityState.Modified;
+                    }
 
                     var cthd = new ChiTietHoaDon
                     {
